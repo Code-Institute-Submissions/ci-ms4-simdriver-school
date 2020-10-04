@@ -10,7 +10,22 @@ body {
     color: #000 !important;
 }
 
-/* from Bulma */
+.header-container {
+    padding-top: 150px;
+}
+
+/* --- Navigation styles --- */
+.highlight:hover {
+    border-top: 1px solid;
+    border-radius: 15px;
+}
+
+.active-nav {
+    border-top: 1px solid #fff;
+    border-radius: 15px;
+}
+
+/* --- from Bulma --- */
 .icon {
     align-items: center;
     display: inline-flex;

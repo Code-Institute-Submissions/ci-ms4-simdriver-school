@@ -109,11 +109,13 @@
                     </ul>
                 </div>
             </div> 
-            <div class="row bg-primary">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+            <div class="row bg-dark">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary w-100">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
                     </button>
+                    {% include 'includes/mobile-header.html' %}
+                    {% include 'includes/main-nav.html' %}
                 </nav>
             </div>           
         </header>
@@ -133,10 +135,10 @@
         {% endblock %}
 
         <script type="text/javascript">
-            let link = $('.nav-item');
+            let link = $('.show');
             link.on('click', function() {
-                link.removeClass("active");
-                $(this).addClass("active");
+                link.removeClass("active-nav");
+                $(this).addClass("active-nav");
             })
         </script>
     </body>

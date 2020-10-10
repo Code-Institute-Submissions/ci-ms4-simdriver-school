@@ -138,11 +138,15 @@
                 <div class="col-sm-4">
                     <ul class="list-inline">
                         <li>Follow us</li>
-                        <li class="list-inline-item text-white">
-                            <a href="{% url 'facebook' %}" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <li class="list-inline-item">
+                            <a href="{% url 'facebook' %}" class="text-white social facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </li>
-                        <li class="list-inline-item">twitter</li>
-                        <li class="list-inline-item">insta</li>
+                        <li class="list-inline-item">
+                            <a href="{% url 'instagram' %}" class="text-white social instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="{% url 'twitter' %}" class="text-white social twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>

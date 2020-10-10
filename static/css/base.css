@@ -144,6 +144,29 @@ footer {
     padding-top: 0.5rem;
 }
 
+.social {
+    font-size: 1.5rem;
+    padding: 0 10px;
+}
+
+.facebook:hover {
+    background-color: #3B5998;
+    border-radius: 50px;
+}
+
+.twitter:hover {
+    background-color: #1DA1F2;
+    border-radius: 50px;
+    padding: 0 5px;
+}
+
+.instagram:hover {
+    background: rgb(255,220,128);
+    background: linear-gradient(45deg, rgba(255,220,128,1) 10%, rgba(252,175,69,1) 20%, rgba(247,119,55,1) 30%, rgba(253,36,76,1) 50%, rgba(88,81,216,1) 70%, rgba(131,58,180,1) 90%);
+    border-radius: 50px;
+    padding: 0 7px;
+}
+
 /* --- Medium screen size styles --- */
 @media only screen and (max-width: 768px) {
     .info-bar {

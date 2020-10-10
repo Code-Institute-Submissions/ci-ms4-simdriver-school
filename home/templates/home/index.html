@@ -10,11 +10,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container main-wrap">
+    <div class="container-fluid main-wrap ">
         <div class="row main-container mx-auto">
             <div class="col index-container text-center my-auto">
                 <h1 class="display-4 index-logo my-auto">SimRacing School!</h1>
-                <p class="text-white my-auto">Weekly setups, track guides, driver coaching at one place.</p>
+                <p class="my-auto index-shadow">Weekly setups, track guides, driver coaching at one place.</p>
             </div>
         </div>
         <!-- Horizontal divider -->
@@ -161,12 +161,12 @@
             </div>
             <div class="col-sm-12 col-md-4 my-auto pt-4">
                 <a href="{% url 'iracing' %}" target="_blank">
-                    <img class="img-fluid" src="/media/iracinglogo.png" alt="Crew Chief logo">
+                    <img class="img-fluid" src="/media/iracinglogo.png" alt="iRacing.com logo">
                 </a>
             </div>
             <div class="col-sm-12 col-md-4 my-auto pt-4">
-                <a href="{% url 'tradepaints' %}" target="_blank">
-                    <img class="img-fluid" src="/media/tradepaint.png" alt="Crew Chief logo">
+                <a href="{% url 'tradingpaints' %}" target="_blank">
+                    <img class="img-fluid" src="/media/tradingpaints.png" alt="TradingPaints logo">
                 </a>
             </div>
         </div>
@@ -230,7 +230,7 @@
                 </h3>
             </div>
             <div class="col-sm-12 col-md-4 text-sm-center">
-                <a href="#" class="btn btn-outline-light" role="button">Join Us!</a>
+                <a href="#" class="btn btn-outline-light" role="button">Join Us Now!</a>
             </div>
         </div>
     </div>
@@ -278,4 +278,31 @@
             </div>
         </div>
     </div>
+
+    <!-- Background animation -->
+    <script type="text/javascript">
+        const mainWrap = $('.main-wrap');
+
+        const backgrounds = new Array(
+            'url(/media/season4-breaker.jpg)',
+            'url(/media/wheel-finishes-1.jpg)',
+            'url(/media/porsche-cup.png)',
+            'url(/media/dallara-p217.jpg)'
+        );
+
+        let current = 0;
+
+        function nextBackground(){
+            current ++;
+            current = current % backgrounds.length;
+            mainWrap.css('background', backgrounds[current]);
+            mainWrap.css('background-size', 'cover');
+            mainWrap.css('transition-timing-function', 'ease-in-out');
+            mainWrap.css('transition', '3s');
+        }
+        setInterval(nextBackground, 12000);
+
+        mainWrap.css('background', backgrounds[0]);
+    </script>
 {% endblock %}
+

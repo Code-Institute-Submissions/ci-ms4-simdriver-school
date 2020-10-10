@@ -18,27 +18,35 @@ body {
 }
 
 .header-container {
-    padding-top: 150px;
+    padding-top: 126px;
 }
 
 /* index.html styles */
 .main-wrap {
-    min-height: 65vh;
-    
+    min-height: 85vh;
 }
 
 .main-container { 
-    margin-top: 15%;
-    background: url('/media/page_bg.jpg');
-    height: 300px !important;
+    /* background: url('/media/page_bg.jpg'); */
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 250px !important;
+    width: inherit;
+    max-width: 70vw;
     border-radius: 2rem;
     border: 2px solid #007bff;
+    position: absolute;
+    top: 275px;
+    left: 15%;
 }
 
 .index-container {
     font-family: 'Russo One', sans-serif;
     color: #007bff;
-    text-shadow: #000 2px 2px 2px;
+    text-shadow: #fff 2px 2px 2px;
+}
+
+.index-shadow {
+    text-shadow: #fff 1px 1px 1px;
 }
 
 /* --- Info bar --- */
@@ -124,9 +132,9 @@ body {
 }
 
 .icon-big {
-    height: 5rem !important;
-    width: 100% !important;
-    border-radius: 50%;
+    height: 4rem !important;
+    max-width: 80% !important;
+    border-radius: 10%;
 }
 
 .big {
@@ -146,7 +154,7 @@ footer {
 
 .social {
     font-size: 1.5rem;
-    padding: 0 10px;
+    padding: 0 9px;
 }
 
 .facebook:hover {
@@ -165,6 +173,11 @@ footer {
     background: linear-gradient(45deg, rgba(255,220,128,1) 10%, rgba(252,175,69,1) 20%, rgba(247,119,55,1) 30%, rgba(253,36,76,1) 50%, rgba(88,81,216,1) 70%, rgba(131,58,180,1) 90%);
     border-radius: 50px;
     padding: 0 7px;
+}
+
+.copy {
+    height: 90px; 
+    margin: 0 auto;
 }
 
 /* --- Medium screen size styles --- */

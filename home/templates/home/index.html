@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="container-fluid header-container">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -10,11 +10,267 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container main-container">
-        <div class="row">
-            <div class="col index-container">
-                <h1 class="display-4 index-logo">SimRacing School!</h1>
-                <p class="text-white">Weekly setups, track guides, driver coaching at one place.</p>
+    <div class="container main-wrap">
+        <div class="row main-container mx-auto">
+            <div class="col index-container text-center my-auto">
+                <h1 class="display-4 index-logo my-auto">SimRacing School!</h1>
+                <p class="text-white my-auto">Weekly setups, track guides, driver coaching at one place.</p>
+            </div>
+        </div>
+        <!-- Horizontal divider -->
+        <div class="row"><div class="col"><hr></div></div>
+    </div>
+
+    <!-- Info bar -->
+    <div class="container-fluid info-wrap bg-primary px-0">
+        <div class="row info-bar bg-primary text-center text-white ">
+            <div class="col-sm-6 col-md-4 col-lg-2 my-auto px-0">
+                <span class="info-number">19,000+</span>
+                <p class="initialism">Laps Lead</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 my-auto px-0">
+                <span class="info-number">3,400+</span>
+                <p class="initialism">Top 5's</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 my-auto px-0">
+                <span class="info-number">1,350+</span>
+                <p class="initialism">Races Won</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 my-auto px-0">
+                <span class="info-number">1,100+</span>
+                <p class="initialism">Pole Positions</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 my-auto px-0">
+                <span class="info-number">6</span>
+                <p class="initialism">Pro Drivers</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 my-auto px-0">
+                <span class="info-number">1</span>
+                <p class="initialism">Goal</p>
+            </div>
+        </div>   
+    </div>
+
+    <!-- Packages Promo Silver Package-->
+    <div class="container-fluid silver" id="packages">
+        <div class="row mt-5 mb-5">
+            <div class="col-sm-12 col-md-5 mx-auto my-auto">
+                <h3 class="text-uppercase text-muted">The Silver Package!</h3>
+                <hr>
+                <ul>
+                    <li>The Silver Package is the starter plan for beginners to help improove your driving in iRacing.</li>
+                    <li>Get an access to your selected car (i.e. Dallara P217 lmp2).</li>
+                    <li>Included with our Silver Package:</li>
+                        <ul>
+                            <li>Professional setups for the current tracks of the iRacing Calendar.</li>
+                            <li>Hotlap Videos with cockpit view for every track, including throttle and break inputs.</li>
+                        </ul>
+                    <li>Monthly subscription with a price: £4.99/mo.</li>
+                </ul>    
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 mx-auto">
+                <div class="card mx-auto" style="width: 22rem;">
+                    <ul class="list-group list-group-flush mt-0">
+                        <li class="list-group-item text-center bg-silver border-0">
+                            <h5 class="card-title">Silver Package</h5>
+                            <p class="card-text">For beginner drivers, give access to a single car and setup weekly.</p>
+                        </li>
+                        <li class="list-group-item text-center bg-silver pt-3 pb-4"><span class="price-tag-silver">£4.99</span> /mo.</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Pick One Car And Race</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Single Car Access</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Hotlap Video</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Weekly Setup Files</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Basic Setup Tutorials</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Join Discord Community</li>
+                    </ul>
+                    <div class="card-footer text-center">
+                        <a href="#">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-2 col-lg-2 my-auto mx-auto pt-1 d-none d-lg-block">
+                <img class="img-fluid" src="/media/silver.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Packages Promo Gold Package -->
+    <div class="container-fluid bg-grey gold">
+        <div class="row mt-5 mb-5">
+            <div class="col-sm-12 col-md-3 col-lg-2 my-auto mx-auto d-none d-lg-block">
+                <img class="img-fluid" src="/media/gold.png">
+            </div>
+            <div class="col-sm-12 col-md-3 mx-auto">
+                <div class="card mx-auto" style="width: 22rem;">
+                    <ul class="list-group list-group-flush mt-0">
+                        <li class="list-group-item text-center bg-gold border-0">
+                            <h5 class="card-title">Gold Package</h5>
+                            <p class="card-text">For the pro drivers, give access to all cars and setups weekly.</p>
+                        </li>
+                        <li class="list-group-item text-center bg-gold pt-3 pb-4"><span class="price-tag-gold">£9.99</span> /mo.</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Silver Package included</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Weekly Replay File</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Weekly Ghost Lap Files</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Access All Cars / Series</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Weekly Track Guides</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Inclusive Group Coaching Sessions</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Added Discord Q &amp; A Section</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Discounts on 1 to 1 Sessions</li>
+                        <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Software and Setup Tutorials</li>
+                    </ul>
+                    <div class="card-footer text-center">
+                        <a href="#">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5 mx-auto my-auto">
+                <h3 class="text-uppercase text-muted">The Gold Package!</h3>
+                <hr>
+                <ul>
+                    <li>The Gold Package is the perfect plan for all the sim-racing enthusiast who is looking for the last tenths where they can improove their driving.</li>
+                    <li>Get instant access to all cars and setups.</li>
+                    <li>Included with our Gold Package:</li>
+                        <ul>
+                            <li>Silver Package.</li>
+                            <li>Weekly replay and ghost lap files.</li>
+                            <li>Detailed weekly track guides.</li>
+                            <li>Inclusive group coaching sessions. (Every Thuesday 19:00 GMT, iRacing Hosted Session.)</li>
+                            <li>Discounts on our 1 to 1 Sessions.</li>
+                        </ul>
+                    <li>Monthly subscription with a price: £9.99/mo.</li>
+                </ul>    
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid vw-100" >
+        <div class="row bg-primary" style="height: 300px;">
+            <div class="col text-center text-white my-auto">
+                <h1>Get your iRacing Setups Today</h1>
+                <span>Don't hesitate, whether you're a sim or real racer, join today, learn, prepare &amp; perform tomorrow</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row text-center pic-banner">
+            <div class="col-sm-12 col-md-4 my-auto pt-4">
+                <a href="url 'crewchief.org'" target="_blank">
+                    <img class="img-fluid" src="/media/crewchief.jpg" alt="Crew Chief logo">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4 my-auto pt-4">
+                <img class="img-fluid" src="/media/iracinglogo.png" alt="Crew Chief logo">
+            </div>
+            <div class="col-sm-12 col-md-4 my-auto pt-4">
+                <img class="img-fluid" src="/media/tradepaint.png" alt="Crew Chief logo">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-grey">
+        <div class="row ">
+            <div class="col-sm-12 col-md-12 col-lg-2"></div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="row mt-4">
+                    <div class="col-sm-2 my-auto bg-dark text-white icon icon-big">
+                        <i class="fas fa-exclamation-triangle big"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Setups from top drivers</h4>
+                        <span>
+                            We provide <strong>great setups</strong> for the most popular cars on iRacing! Fint all cars 
+                            <a href="#">here.</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-2 my-auto bg-dark text-white icon icon-big">
+                        <i class="far fa-file big"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Delta Time Files</h4>
+                        <span>Race live against our sector times and <strong>immediately see</strong> where you are losing time!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="row mt-4">
+                    <div class="col-sm-2 my-auto bg-dark text-white icon icon-big">
+                        <i class="fas fa-film big"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Track guide videos</h4>
+                        <span>See the <strong>perfect line</strong> and the optimal throttle and break inputs.</span>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-2 my-auto bg-dark text-white icon icon-big">
+                        <i class="fas fa-user-friends big"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Inclusive Coaching Sessions</h4>
+                        <span>Every week <strong>we host multiple sessions</strong> where members can join the coaches and take advantage of our group coaching sessions.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-2"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-primary join-us">
+        <div class="row pt-5">
+            <div class="col-sm-12 col-md-8 text-center text-white my-auto">
+                <h3>
+                    No more baseline setups with Us!
+                </h3>
+            </div>
+            <div class="col-sm-12 col-md-4 text-sm-center">
+                <a href="#" class="btn btn-outline-light" role="button">Join Us!</a>
+            </div>
+        </div>
+    </div>
+    <div class="container d-none">
+        <!-- Horizontal divider -->
+        <div class="row"><div class="col"><hr></div></div>
+
+        <div class="row mx-auto">
+            <div class="col-sm-4">
+                <div class="card mx-auto">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                    <div class="card-footer">
+                        Card footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mx-auto">
+                    <ul class="list-group list-group-flush mt-0">
+                        <li class="list-group-item text-center bg-gold border-0">
+                            <h5 class="card-title">Gold Package</h5>
+                            <p class="card-text">For the professional drivers, give access to all cars and setups every week.</p>
+                        </li>
+                        <li class="list-group-item text-center bg-gold"><span class="price-tag">£9.99</span> /mo.</li>
+                        <li class="list-group-item"><i class="fas fa-check text-green pr-2"></i>Silver Package included</li>
+                        <li class="list-group-item"><i class="fas fa-check text-green pr-2"></i>Access All Cars / Series</li>
+                        <li class="list-group-item"><i class="fas fa-check text-green pr-2"></i>Weekly Replay File</li>
+                        <li class="list-group-item"><i class="fas fa-check text-green pr-2"></i>Weekly Ghost Lap Files</li>
+                        <li class="list-group-item"><i class="fas fa-check text-green pr-2"></i>Weekly Track Guides</li>
+                        <li class="list-group-item"><i class="fas fa-check text-green pr-2"></i>Added Discord Q &amp; A Section</li>
+                        <li class="list-group-item"><i class="fas fa-check text-green pr-2"></i>Discounts on 1 to 1 Sessions</li>
+                        <li class="list-group-item"><i class="fas fa-check text-green pr-2"></i>Software and Setup Tutorials</li>
+                    </ul>
+                    <div class="card-footer text-center">
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>            
+            </div>
+            <div class="col-sm-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nemo alias? Natus, non unde at esse neque aperiam id. Sit, culpa. Commodi vero molestias libero veritatis voluptatum fugit corrupti quos?
             </div>
         </div>
     </div>

@@ -155,15 +155,19 @@
     <div class="container-fluid">
         <div class="row text-center pic-banner">
             <div class="col-sm-12 col-md-4 my-auto pt-4">
-                <a href="url 'crewchief.org'" target="_blank">
+                <a href="{% url 'crewchief' %}" target="_blank">
                     <img class="img-fluid" src="/media/crewchief.jpg" alt="Crew Chief logo">
                 </a>
             </div>
             <div class="col-sm-12 col-md-4 my-auto pt-4">
-                <img class="img-fluid" src="/media/iracinglogo.png" alt="Crew Chief logo">
+                <a href="{% url 'iracing' %}" target="_blank">
+                    <img class="img-fluid" src="/media/iracinglogo.png" alt="Crew Chief logo">
+                </a>
             </div>
             <div class="col-sm-12 col-md-4 my-auto pt-4">
-                <img class="img-fluid" src="/media/tradepaint.png" alt="Crew Chief logo">
+                <a href="{% url 'tradepaints' %}" target="_blank">
+                    <img class="img-fluid" src="/media/tradepaint.png" alt="Crew Chief logo">
+                </a>
             </div>
         </div>
     </div>

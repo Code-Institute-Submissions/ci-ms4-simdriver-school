@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import Facebook, Twitter, Instagram, iRacing, CrewChief, TradePaints
+from .views import Facebook, Twitter, Instagram, iRacing, CrewChief, TradingPaints
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +28,5 @@ urlpatterns = [
     path('/instagram', Instagram.as_view(), name='instagram'),
     path('/crewchief', CrewChief.as_view(), name='crewchief'),
     path('/iracing', iRacing.as_view(), name='iracing'),
-    path('/tradepaints', TradePaints.as_view(), name='tradepaints'),
+    path('/tradepaints', TradingPaints.as_view(), name='tradingpaints'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

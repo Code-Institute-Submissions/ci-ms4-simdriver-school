@@ -20,7 +20,7 @@ class iRacing(RedirectView):
     url = 'https://iracing.com'
 
 
-class TradePaints(RedirectView):
+class TradingPaints(RedirectView):
     url = 'https://tradingpaints.com'
 
 

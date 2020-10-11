@@ -132,13 +132,21 @@
         {% endblock %}
 
         <footer class="w-100">
-            <div class="row">
+            <div class="row  text-center">
                 <div class="col-sm-4">footer left</div>
-                <div class="col-sm-4">footer middle</div>
+                <div class="col-sm-4">
+                    <table class="copy">
+                        <tbody>
+                            <tr>
+                                <td class="align-bottom ">2020 &copy; Krisztian Keseru</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="col-sm-4">
                     <ul class="list-inline">
-                        <li>Follow us</li>
-                        <li class="list-inline-item">
+                        <li>Follow us at:</li>
+                        <li class="list-inline-item mt-2">
                             <a href="{% url 'facebook' %}" class="text-white social facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </li>
                         <li class="list-inline-item">

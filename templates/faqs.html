@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container-fluid header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid main bg-grey">
+    <div class="w-75 mx-auto">
+        <h2 class="text-center mt-3 mb-3">F.A.Q.s</h4>
+            <hr class="mb-4">
+
+        <div class="row">
+
+            <!-- Collapsible FAQs general -->
+            <div class="col-sm-12 col-md-4">
+                <h4 class="text-center">General</h4>
+                <div class="accordion" id="faqs-general">
+                    <div class="card">
+                        <div class="card-header" id="heading-1-a">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-1-a" aria-expanded="true" aria-controls="collapse-1-a">
+                                What is the SimRacing School?
+                            </button>
+                            </h2>
+                        </div>
+                    
+                        <div id="collapse-1-a" class="collapse" aria-labelledby="heading-1-a" data-parent="#faqs-general">
+                            <div class="card-body">
+                                The SimRacing School is a platform for beginners who want's to improove their driving skills, but also for experienced simracers too. Some of the best simracers offer you 
+                                professions 1:1 coaching alongside setup packages, hotlap videos and delta time files. Our goal is to tech you how to win races.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="heading-2-a">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-2-a" aria-expanded="false" aria-controls="collapse-2-a">
+                                What do I need to use the packages from you?
+                            </button>
+                            </h2>
+                        </div>
+                        <div id="collapse-2-a" class="collapse" aria-labelledby="heading-2-a" data-parent="#faqs-general">
+                            <div class="card-body">
+                                You need an active iRacing account and an active debit or credit card for the purchase.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="heading-3-a">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-3-a" aria-expanded="false" aria-controls="collapse-3-a">
+                                How can SimRacing School help me?
+                            </button>
+                            </h2>
+                        </div>
+                        <div id="collapse-3-a" class="collapse" aria-labelledby="heading-3-a" data-parent="#faqs-general">
+                            <div class="card-body">
+                                Depending on which package you bought, you can learn in different ways how to drive the respective car  around the track in the fastest way. Be it through the setup package, 
+                                hotlap video, replay or the delta time file. In a 1: 1 coaching session we will personally analyze your driving style, show you where you lose time and through tips and tricks 
+                                fundamentally improve your driving style.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="heading-4-a">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-4-a" aria-expanded="false" aria-controls="collapse-4-a">
+                                Do you create setups only for iRacing?
+                            </button>
+                            </h2>
+                        </div>
+                        <div id="collapse-4-a" class="collapse" aria-labelledby="heading-4-a" data-parent="#faqs-general">
+                            <div class="card-body">
+                                All our coaches are specialized on iRacing and barely drive on other simulations. Moreover, iRacing uses a very unique series and league system which makes it possible for us to 
+                                work in the way we do. These are the reasons why we are currently not able to provide our service for other simulations, too.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="heading-5-a">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-5-a" aria-expanded="false" aria-controls="collapse-5-a">
+                                Can I share SimRacing School setups?
+                            </button>
+                            </h2>
+                        </div>
+                        <div id="collapse-5-a" class="collapse" aria-labelledby="heading-5-a" data-parent="#faqs-general">
+                            <div class="card-body">
+                                We work hard to provide our members with good and competitive setups, so we ask you <strong>not</strong> to share our setups with other drivers. Instead, you can refer your friends / 
+                                team members to our site so they have the chance to enjoy our full service. We also offer a special discount rate for whole teams so make sure to check this question to your right.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="heading-6-a">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-6-a" aria-expanded="false" aria-controls="collapse-6-a">
+                                I have a question that does not appear in the FAQs.
+                            </button>
+                            </h2>
+                        </div>
+                        <div id="collapse-6-a" class="collapse" aria-labelledby="heading-6-a" data-parent="#faqs-general">
+                            <div class="card-body">
+                                Just send a message to us via our <a href="#">contact form</a> or ask it on our Discord server. We or our community will answer your question as soon as possible.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible FAQS - payment -->
+            <div class="col-sm-12 col-md-4">
+                <h4 class="text-center">Payment</h4>
+                <div class="accordion" id="faqs-payment">
+                    <div class="card">
+                        <div class="card-header" id="heading-1-b">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-1-b" aria-expanded="true" aria-controls="collapse-1-b">
+                                Which payment options are available?
+                            </button>
+                            </h2>
+                        </div>
+                    
+                        <div id="collapse-1-b" class="collapse" aria-labelledby="heading-1-b" data-parent="#faqs-payment">
+                            <div class="card-body">
+                                We accept all major Debit and Credit Cards. We are using stripe to the secure checkout. 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading-2-b">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-2-b" aria-expanded="false" aria-controls="collapse-2-b">
+                                Is it a monthly subscription?
+                            </button>
+                            </h2>
+                        </div>
+                        <div id="collapse-2-b" class="collapse" aria-labelledby="heading-2-b" data-parent="#faqs-payment">
+                            <div class="card-body">
+                                Yes! Our payment system using Stripe monthly plan's for the subscription.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading-3-b">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-3-b" aria-expanded="false" aria-controls="collapse-3-b">
+                                Are there discounts for teams?
+                            </button>
+                            </h2>
+                        </div>
+                        <div id="collapse-3-b" class="collapse" aria-labelledby="heading-3-b" data-parent="#faqs-payment">
+                            <div class="card-body">
+                                Yes! So that larger teams also have an advantage of creating multiple accounts, we offer special discounts. You are in a team and would like to have a decent discount on your 
+                                account? Please write an email to "team.discount@simracingschool.com" or use the contact us section of our page with your team details, so we can make you an offer directly.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Collapsible FAQs payment -->
+
+            <!-- Collapsible FAQs Packages -->
+            <div class="col-sm-12 col-md-4">
+                <h4 class="text-center">Packages</h4>
+                <div class="accordion" id="faqs-packages">
+                    <div class="card">
+                        <div class="card-header" id="heading-1-c">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-1-c" aria-expanded="true" aria-controls="collapse-1-c">
+                                Where are the setup packages created?
+                            </button>
+                            </h2>
+                        </div>
+                    
+                        <div id="collapse-1-c" class="collapse" aria-labelledby="heading-1-c" data-parent="#faqs-packages">
+                            <div class="card-body">
+                                The packages are generally created in offline testing at the corresponding weather settings. A detailed list of the weather settings can be found on the respective package page.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading-2-c">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-2-c" aria-expanded="true" aria-controls="collapse-2-c">
+                                In which folder do I have to save the setup file?
+                            </button>
+                            </h2>
+                        </div>
+                    
+                        <div id="collapse-2-c" class="collapse" aria-labelledby="heading-2-c" data-parent="#faqs-packages">
+                            <div class="card-body">
+                                The correct folder can be found in your documents under the path "Documents / iRacing / setups". Just search for the car for which the setup was built and copy the file into it. 
+                                You can create more subfolders in the folder of different cars, so you do not lose the overview.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading-3-c">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-3-c" aria-expanded="true" aria-controls="collapse-3-c">
+                                Are the setups based on qualy or race fuel?
+                            </button>
+                            </h2>
+                        </div>
+                    
+                        <div id="collapse-3-c" class="collapse" aria-labelledby="heading-3-c" data-parent="#faqs-packages">
+                            <div class="card-body">
+                                Generally we create the setups with the maximal fuel amount that can be used in the corresponding series. If you want to use the setup in the qualification too, you just need to 
+                                reduce the fuel amount and adjust the ride heights to the same level that have been set before.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading-4-c">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-4-c" aria-expanded="true" aria-controls="collapse-4-c">
+                                What is a .blap and an .olap file?
+                            </button>
+                            </h2>
+                        </div>
+                    
+                        <div id="collapse-4-c" class="collapse" aria-labelledby="heading-4-c" data-parent="#faqs-packages">
+                            <div class="card-body">
+                                On iRacing there is the possibility to drive against a delta-time. This will show you on your screen whether you are currently winning (green area) or losing (red area) time. 
+                                You can insert our delta-time and then drive against it, so you can see directly while driving, where you can still make up time.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading-5-c">
+                            <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-5-c" aria-expanded="true" aria-controls="collapse-5-c">
+                                How can I use the .blap and .olap file?
+                            </button>
+                            </h2>
+                        </div>
+                    
+                        <div id="collapse-5-c" class="collapse" aria-labelledby="heading-5-c" data-parent="#faqs-packages">
+                            <div class="card-body">
+                                The file basically works like a setup file. After the download, you can save it under the path "Documents / iRacing / lapfiles" in the corresponding track folder. Then you have 
+                                to load this file in the iRacing simulation. Click on this picture to see where you have to load it. After loading the correct file you need to set your delta time to "comparison lap".
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Collapsible FAQs package -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

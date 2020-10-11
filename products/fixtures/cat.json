@@ -1,0 +1,7 @@
+[{"pk": 1, "model": "products.category", "fields": {"name": "gt3_sprint", "friendly_name": "GT3 Sprint Series", "image_url": "/series/gt-sprint.jpg", "image": "series/gt-sprint.jpg"}},
+{"pk": 2, "model": "products.category", "fields": {"name": "imsa", "friendly_name": "IMSA", "image": "imsa.jpg"}},
+{"pk": 3, "model": "products.category", "fields": {"name": "imsa_michelin", "friendly_name": "IMSA Michelin Pilot Challange", "image": "series/imsa-michelin.jpg"}},
+{"pk": 4, "model": "products.category", "fields": {"name": "ilms", "friendly_name": "iRacing LeMans Series", "image": "series/ilms.jpg"}},
+{"pk": 5, "model": "products.category", "fields": {"name": "open_wheeler", "friendly_name": "Open Wheeler", "image": "series/open-wheeler.png"}},
+{"pk": 6, "model": "products.category", "fields": {"name": "porsche_gt3_cup", "friendly_name": "Porsche GT3 Cup", "image": "series/porsche-cup.jpg"}},
+{"pk": 7, "model": "products.category", "fields": {"name": "mazda-mx5", "friendly_name": "Mazda MX5 Cup", "image": "series/global-mazda.jpg"}}]

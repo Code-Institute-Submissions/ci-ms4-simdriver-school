@@ -10,42 +10,50 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid bg-grey">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font">Silver Package</h2>
+            <h2 class="logo-font">Silver Package - Car List</h2>
             <hr class="w-50 mb-1">
         </div>
     </div>
     <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
-            <div class="row">
+            <div class="row mb-5">
                 <div class="accordion" id="accordionExample">
                 {% for product in products %}
-                
-                    <div class="card w-100 mb-1">
-                      
+                    {% if product.name == 'Gold Package' %}
+                        <div class="d-none"></div>
+                    {% else %}
+                    <div class="card w-100">                      
                         <div class="row" style="max-height: 75px;">
                             <div class="col-md-2" style="max-height: 75px;">
-                                <img src="{{ product.category.image.url }}" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain" alt="{{ product.category.name }}">
+                                {% if product.category.image %}
+                                    <img src="{{ product.category.image.url }}" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain" alt="{{ product.category.name }}">
+                                {% else %}
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain" alt="{{ product.category.name }}">
+                                {% endif %}
                             </div>
                             <div class="col-md-2" style="max-height: 75px;">
-                                <img src="{{ product.image.url }}" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain"  alt="{{ product.name }}">
+                                {% if product.image %}
+                                    <img src="{{ product.image.url }}" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain"  alt="{{ product.name }}">
+                                {% else %}
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain"  alt="{{ product.name }}">
+                                {% endif %}
                             </div>
                             <div class="col-md-7 my-auto">
                                 <span class="font-weight-bold">{{ product.name }}</span><br>
                                 <small>Series: {{ product.description }}</small>
                             </div>
                             <div class="col-md-1 my-auto">
-                                <button class="btn"> 
-                                    <a>
-                                        Details <i class="fas fa-arrow-circle-right"></i>
-                                    </a>
-                                </button>
+                                <a href="{% url 'product_details' product.id %}" class="btn btn-outline-primary">
+                                    Details <i class="fas fa-arrow-circle-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 {% endfor %}
                 </div>
             </div>

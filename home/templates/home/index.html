@@ -84,7 +84,7 @@
                         <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Join Discord Community</li>
                     </ul>
                     <div class="card-footer text-center">
-                        <a href="#">View Details</a>
+                        <a href="{% url 'packages' %}" class="btn btn-outline-primary px-3">View Details</a>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                         <li class="list-group-item pt-2 pb-2"><i class="fas fa-check text-green pr-2"></i>Software and Setup Tutorials</li>
                     </ul>
                     <div class="card-footer text-center">
-                        <a href="#">View Details</a>
+                        <a href="{% url 'packages' %}" class="btn btn-outline-primary px-3">View Details</a>
                     </div>
                 </div>
             </div>
@@ -230,7 +230,7 @@
                 </h3>
             </div>
             <div class="col-sm-12 col-md-4 text-sm-center">
-                <a href="#" class="btn btn-outline-light" role="button">Join Us Now!</a>
+                <a href="{% url 'packages' %}" class="btn btn-outline-light" role="button">Join Us Now!</a>
             </div>
         </div>
     </div>
@@ -256,9 +256,10 @@
             mainWrap.css('transition-timing-function', 'ease-in-out');
             mainWrap.css('transition', '3s');
         }
-        setInterval(nextBackground, 12000);
+        setInterval(nextBackground, 9500);
 
         mainWrap.css('background', backgrounds[0]);
+        mainWrap.css('background-size', 'cover');
     </script>
 {% endblock %}
 

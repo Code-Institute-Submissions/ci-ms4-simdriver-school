@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     path('products/', include('products.urls')),
+    path('', include('sendemail.urls')),
     path('facebook/', Facebook.as_view(), name='facebook'),
     path('twitter/', Twitter.as_view(), name='twitter'),
     path('instagram/', Instagram.as_view(), name='instagram'),

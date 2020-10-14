@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'sendemail.apps.SendemailConfig',
+    'cart',
 ]
 
 MIDDLEWARE = [

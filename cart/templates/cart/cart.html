@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container-fluid header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid main bg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="text-center">Shopping Cart</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {% if bag_items %}
+                    <div class="table-responsive rounded"></div>
+                {% else %}
+                    <p class="lead mb-5">Your bag is empty.</p>
+                    <a href="{% url 'packages' %}" class="btn btn-outline-primary">
+                        <span class="icon">
+                            <i class="fas fa-arrow-alt-circle-left"></i>
+                        </span>
+                        <span>Choose a Package</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -5,6 +5,8 @@ from .forms import ContactForm
 
 # Create your views here.
 def contactView(request):
+    """ inspired by learndjango.com tutorial """
+    
     if request.method == 'GET':
         form = ContactForm()
     else:

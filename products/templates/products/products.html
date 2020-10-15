@@ -26,29 +26,29 @@
                     {% if product.name == 'Gold Package' %}
                         <div class="d-none"></div>
                     {% else %}
-                    <div class="card w-100">                      
-                        <div class="row" style="max-height: 75px;">
-                            <div class="col-md-2" style="max-height: 75px;">
+                    <div class="card w-100 mb-1 mb-lg-0">                      
+                        <div class="row product-card">
+                            <div class="col-sm-6 col-md-2" style="max-height: 75px;">
                                 {% if product.category.image %}
                                     <img src="{{ product.category.image.url }}" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain" alt="{{ product.category.name }}">
                                 {% else %}
                                     <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain" alt="{{ product.category.name }}">
                                 {% endif %}
                             </div>
-                            <div class="col-md-2" style="max-height: 75px;">
+                            <div class="col-sm-6 col-md-2" style="max-height: 75px;">
                                 {% if product.image %}
                                     <img src="{{ product.image.url }}" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain"  alt="{{ product.name }}">
                                 {% else %}
                                     <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain"  alt="{{ product.name }}">
                                 {% endif %}
                             </div>
-                            <div class="col-md-7 my-auto">
+                            <div class="col-md-6 my-auto">
                                 <span class="font-weight-bold">{{ product.name }}</span><br>
                                 <small>iRacing Series: {{ product.description }}</small>
                             </div>
-                            <div class="col-md-1 my-auto">
-                                <a href="{% url 'product_details' product.id %}" class="btn btn-outline-primary">
-                                    Details <i class="fas fa-arrow-alt-circle-right"></i>
+                            <div class="col-md-2 my-auto text-center text-md-right">
+                                <a href="{% url 'product_details' product.id %}" class="btn btn-outline-primary mr-2">
+                                    Details <i class="fas fa-arrow-alt-circle-right d-sm-none d-md-inline"></i>
                                 </a>
                             </div>
                         </div>

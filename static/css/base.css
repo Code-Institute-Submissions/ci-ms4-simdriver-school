@@ -143,6 +143,11 @@ body {
     font-size: 2.5rem;
 }
 
+/* --- Product page styles --- */
+.product-card {
+    max-height: 75px;
+}
+
 /* --- footer styles --- */
 footer {
     bottom: 0;
@@ -198,6 +203,10 @@ footer {
     height: 2px;
 }
 
+.remove-item {
+    cursor: pointer;
+}
+
 /* --- Medium screen size styles --- */
 @media only screen and (max-width: 768px) {
     .info-bar {
@@ -220,5 +229,10 @@ footer {
 
     .active-nav {
         width: 35vw;
+    }
+
+    /* --- Product page styles --- */
+    .product-card {
+        height: auto !important;
     }
 }

@@ -10,12 +10,17 @@
 {% endblock %}
 
 {% block content %}
-<h1>Contact us</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div class="form-actions">
-        <button type="submit">Send</button>
+<div class="container-fluid main bg-grey">
+    <div class="container">
+        <h1>Contact us</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-actions">
+                <button type="submit">Send</button>
+            </div>
+        </form>
     </div>
-</form>
+</div>
+
 {% endblock %}

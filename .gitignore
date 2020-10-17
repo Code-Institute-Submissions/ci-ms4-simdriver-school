@@ -5,3 +5,5 @@ __pycache__/
 env/
 *.sqlite3
 *.pyc
+home/templates/home/datapacks.html
+home/templates/home/dataselector.html

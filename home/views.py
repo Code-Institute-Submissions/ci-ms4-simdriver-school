@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from products.models import Product, Category
 
 def index(request):
     """ A view to return the index page """
@@ -18,3 +19,23 @@ def packages(request):
     """
 
     return render(request, 'packages.html')
+
+"""
+def datapacks(request):
+    return render(request, 'home/datapacks.html')
+
+
+def dataselector(request):
+
+    products = Product.objects.all()
+    categories = Category.objects.all()
+
+    imsa = Product.objects.filter(category__name='imsa_series')
+
+    context = {
+        'products': products,
+        'categories': categories,
+        'imsa': imsa,
+    }
+    return render(request, 'home/dataselector.html', context)
+"""

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container-fluid header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid main bg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="text-center">Thank You!</h2>
+                <hr>
+                <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-7"></div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <a href="#" class="btn btn-outline-primary my-2">
+                    <span>Now check out your new datapack(s).</span>
+                </a>
+            </div>
+        </div> 
+    </div>
+</div>
+{% endblock %}

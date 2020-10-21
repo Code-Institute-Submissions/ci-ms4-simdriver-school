@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('sendemail.urls')),
     path('cart/', include('cart.urls')),
     path('checkout/', include('checkout.urls')),
+    path('profiles/', include('user_profiles.urls')),
     path('facebook/', Facebook.as_view(), name='facebook'),
     path('twitter/', Twitter.as_view(), name='twitter'),
     path('instagram/', Instagram.as_view(), name='instagram'),

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'sendemail.apps.SendemailConfig',
     'cart',
     'checkout',
+    'user_profiles',
 
     # Other
     'crispy_forms',

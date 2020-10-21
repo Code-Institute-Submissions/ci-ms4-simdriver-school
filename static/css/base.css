@@ -9,6 +9,11 @@ body {
 }
 
 .main {
+    min-height: 77vh !important;
+    padding: 30px 0;
+}
+
+.main-80 {
     min-height: 80vh !important;
     padding: 30px 0;
 }
@@ -171,6 +176,24 @@ body {
     max-height: 75px;
 }
 
+/* --- Allauth form styles --- */
+.allauth-form-inner-content p {
+    margin-top: 1.5rem;
+    color: #6c757d;
+}
+
+.allauth-form-inner-content input {
+    border-color: #000;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
 /* --- footer styles --- */
 footer {
     bottom: 0;
@@ -232,6 +255,10 @@ footer {
 
 /* --- Medium screen size styles --- */
 @media only screen and (max-width: 768px) {
+    html {
+        overflow-y: auto;
+    }
+
     .info-bar {
         height: 300px;
         width: 100vw;

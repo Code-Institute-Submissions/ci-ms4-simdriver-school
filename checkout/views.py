@@ -13,6 +13,8 @@ import stripe
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+    #stripe_plan_silver = settings.STRIPE_PLAN_SILVER
+    #stripe_plan_gold = settings.STRIPE_PLAN_GOLD
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})

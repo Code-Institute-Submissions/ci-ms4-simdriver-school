@@ -17,12 +17,22 @@ def packages(request):
     """
     A view to show the available packages
     """
-
-    return render(request, 'packages.html')
+    gold_package = Product.objects.filter(category__name='gold_package')
+    context = {
+        'gold_package': gold_package,
+    }
+    return render(request, 'home/packages.html', context)
 
 """
 def datapacks(request):
-    return render(request, 'home/datapacks.html')
+
+    products = Product.objects.all()
+    categories = Category.objects.all()
+
+    context = {
+        'products': products,
+    }
+    return render(request, 'home/datapacks.html', context)
 
 
 def dataselector(request):

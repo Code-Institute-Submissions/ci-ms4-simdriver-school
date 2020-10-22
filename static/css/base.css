@@ -254,18 +254,24 @@ footer {
 }
 
 /* --- Medium screen size styles --- */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
     html {
         overflow-y: auto;
+    }
+
+    .header-container {
+        padding-top: 80px;
     }
 
     .info-bar {
         height: 300px;
         width: 100vw;
     }
+
     .active-nav {
         width: 15vw;
     }
+
     .pic-banner {
         height: 100%;
     }

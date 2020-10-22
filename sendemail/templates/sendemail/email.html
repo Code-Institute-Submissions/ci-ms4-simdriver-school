@@ -12,14 +12,19 @@
 {% block content %}
 <div class="container-fluid main bg-grey">
     <div class="container">
-        <h1>Contact us</h1>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div class="form-actions">
-                <button type="submit">Send</button>
+        <h2 class="text-center">Contact us</h1>
+        <hr class="w-75">
+        <div class="div">
+            <div class="col-10 mx-auto">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="form-actions text-center">
+                        <button class="btn btn-outline-primary px-5" type="submit">Send Message</button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 

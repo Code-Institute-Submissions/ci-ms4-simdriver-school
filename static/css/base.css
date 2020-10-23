@@ -141,7 +141,6 @@ body {
 
 .bg-grey {
     background-color: rgba(211, 211, 211, .5);
-    /* padding: 50px 0; */
 }
 
 .join-us {
@@ -194,15 +193,41 @@ body {
     color: #aab7c4;
 }
 
+/* --- faqs styles --- */
+.accordion button {
+    text-decoration: none;
+}
+
+.card-header:hover {
+    background: rgba(0, 123, 255, .8);
+    cursor: pointer;
+}
+
+.card-bg-primary {
+    background: rgba(0, 123, 255, 1);
+}
+
+.card-header button:hover {
+    color: #fff;
+}
+
 /* --- footer styles --- */
 footer {
     bottom: 0;
     left: 0;
-    height: 100px;
+    height: auto;
     background: url('/media/asphalt.jpg');
     color: #fff;
     text-align: center;
     padding-top: 0.5rem;
+}
+
+.quick-links {
+    padding: 0;
+}
+
+.quick-links a {
+    color: #fff;
 }
 
 .social {
@@ -229,7 +254,7 @@ footer {
 }
 
 .copy {
-    height: 90px; 
+    min-height: 100px; 
     margin: 0 auto;
 }
 

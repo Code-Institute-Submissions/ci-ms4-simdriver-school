@@ -151,17 +151,34 @@
         <!-- Footer -->
         <footer class="w-100">
             <div class="row  text-center">
-                <div class="col-sm-4">footer left</div>
+                <div class="col-sm-4 my-auto">
+                    <ul class="list-block quick-links">
+                        <li class="">Quick links:</li>
+                        <li class="">
+                            <a class=" py-0" href="{% url 'packages' %}">Packages</a>
+                        </li>
+                        <li class="">
+                            <a class=" py-0" href="{% url 'faqs' %}">F.A.Q.s</a>
+                        </li>
+                        <li class="">
+                            <a class=" py-0" href="{% url 'contact' %}">Contact Us</a>
+                        </li>
+
+                    </ul>
+                </div>
                 <div class="col-sm-4">
-                    <table class="copy">
+                    <table class="copy text-center">
                         <tbody>
                             <tr>
+                                <td class="align-bottom text-uppercase">This site is created for educational purposes only!</td>
+                            </tr>
+                            <tr>                                
                                 <td class="align-bottom ">2020 &copy; Krisztian Keseru</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 my-auto">
                     <ul class="list-inline">
                         <li>Follow us at:</li>
                         <li class="list-inline-item mt-2">

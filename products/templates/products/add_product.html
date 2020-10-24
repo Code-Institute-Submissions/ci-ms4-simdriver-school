@@ -12,15 +12,16 @@
 <div class="container-fluid main bg-grey">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-8 mx-auto text-center">
                 <h2 class="mb-4">Product Management</h2>
+                <hr>
                 <h5 class="text-muted">Add a Product</h5>
                 <hr>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-8 mx-auto">
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form|crispy}}

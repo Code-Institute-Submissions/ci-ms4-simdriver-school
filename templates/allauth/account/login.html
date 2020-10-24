@@ -19,11 +19,11 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot">
 
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
+    <ul class="socialaccount_providers">
+      {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+    </ul>
 
-  <div class="login-or">{% trans 'or' %}</div>
+    <div class="login-or">{% trans 'or' %}</div>
 
 </div>
 
@@ -40,8 +40,10 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
     {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-    <button class="btn btn-outline-primary" type="submit">{% trans "Sign In" %}</button>
-    <a class="btn btn-outline-info secondaryAction float-right" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    <button class="btn btn-block btn-outline-primary" type="submit">{% trans "Sign In" %}</button><br>
+    <div class="text-right">
+        <a class="secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    </div>
 </form>
-
+<hr>
 {% endblock %}

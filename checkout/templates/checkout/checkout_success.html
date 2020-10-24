@@ -167,9 +167,15 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-7">
+            {% if from_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-outline-primary my-2">
+                    <span>Back to your Profile</span>
+                </a>
+            {% else %}
                 <a href="#" class="btn btn-outline-primary my-2">
                     <span>Now check out your new datapack(s).</span>
                 </a>
+            {% endif %}
             </div>
         </div> 
     </div>

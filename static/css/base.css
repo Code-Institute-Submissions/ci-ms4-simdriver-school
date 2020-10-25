@@ -56,6 +56,19 @@ body {
     left: 15%;
 }
 
+.index-logo {
+    font-size: 3.5rem;
+}
+
+.package-list {
+    min-width: 21rem;
+    max-width: 22rem;
+}
+
+.ad-bar {
+    width: 85%;
+}
+
 .index-container {
     font-family: 'Russo One', sans-serif;
     color: #007bff;
@@ -172,6 +185,7 @@ body {
     height: 4rem !important;
     max-width: 80% !important;
     border-radius: 10%;
+    width: 25%;
 }
 
 .big {
@@ -318,6 +332,15 @@ footer {
 
     .active-nav {
         width: 35vw;
+    }
+
+    .index-logo {
+        font-size: 2rem;
+    }
+
+    .package-list {
+        min-width: 15rem;
+
     }
 
     /* --- Product page styles --- */

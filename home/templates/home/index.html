@@ -13,7 +13,7 @@
     <div class="container-fluid main-wrap w-100 ">
         <div class="row main-container mx-auto">
             <div class="col index-container text-center my-auto">
-                <h1 class="display-4 index-logo my-auto">SimRacing School!</h1>
+                <h1 class="index-logo my-auto">SimRacing School!</h1>
                 <p class="my-auto index-shadow">Weekly setups, track guides, driver coaching at one place.</p>
             </div>
         </div>
@@ -52,8 +52,8 @@
     <!-- Packages Promo Silver Package-->
     <div class="container-fluid silver" id="packages">
         <div class="row mt-5 mb-5">
-            <div class="col-sm-12 col-md-5 mx-auto my-auto">
-                <h3 class="text-uppercase text-muted">The Silver Package!</h3>
+            <div class="col-sm-12 col-md-4 mx-auto my-auto">
+                <h3 class="text-uppercase text-muted text-center">The Silver Package!</h3>
                 <hr>
                 <ul>
                     <li>The Silver Package is the starter plan for beginners to help improove your driving in iRacing.</li>
@@ -66,8 +66,8 @@
                     <li>Monthly subscription with a price: £4.99/mo.</li>
                 </ul>    
             </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 mx-auto">
-                <div class="card mx-auto" style="width: 22rem;">
+            <div class="col-sm-12 col-md-4 mx-auto">
+                <div class="card mx-auto package-list">
                     <ul class="list-group list-group-flush mt-0">
                         <li class="list-group-item text-center bg-silver border-0">
                             <h5 class="card-title">Silver Package</h5>
@@ -95,11 +95,11 @@
     <!-- Packages Promo Gold Package -->
     <div class="container-fluid bg-grey gold">
         <div class="row mt-5 mb-5">
-            <div class="col-sm-12 col-md-3 col-lg-2 my-auto mx-auto d-none d-lg-block">
+            <div class="col-sm-12 col-md-4 col-lg-2 my-auto mx-auto d-none d-lg-inline">
                 <img class="img-fluid" src="/media/gold.png">
             </div>
-            <div class="col-sm-12 col-md-3 mx-auto">
-                <div class="card mx-auto" style="width: 22rem;">
+            <div class="col-sm-12 col-md-4 mx-auto mb-3">
+                <div class="card mx-auto package-list">
                     <ul class="list-group list-group-flush mt-0">
                         <li class="list-group-item text-center bg-gold border-0">
                             <h5 class="card-title">Gold Package</h5>
@@ -121,8 +121,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-5 mx-auto my-auto">
-                <h3 class="text-uppercase text-muted">The Gold Package!</h3>
+            <div class="col-sm-12 col-md-5 col-lg-6  my-auto mx-auto">
+                <h3 class="text-uppercase text-muted text-center mt-sm-5">The Gold Package!</h3>
                 <hr>
                 <ul>
                     <li>The Gold Package is the perfect plan for all the sim-racing enthusiast who is looking for the last tenths where they can improove their driving.</li>
@@ -170,10 +170,9 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-grey">
-        <div class="row pb-3">
-            <div class="col-sm-12 col-md-12 col-lg-2"></div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
+    <div class="container-fluid bg-grey mt-3">
+        <div class="row pb-3 mx-auto ad-bar text-sm-center text-md-left">
+            <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="row mt-4">
                     <div class="col-sm-2 my-auto bg-dark text-white icon icon-big">
                         <i class="fas fa-exclamation-triangle big"></i>
@@ -181,8 +180,8 @@
                     <div class="col-sm-10">
                         <h4>Setups from top drivers</h4>
                         <span>
-                            We provide <strong>great setups</strong> for the most popular cars on iRacing! Fint all cars 
-                            <a href="#">here.</a>
+                            We provide <strong>great setups</strong> for the most popular cars on iRacing! Find all cars 
+                            <a href="{% url 'packages' %}">here.</a>
                         </span>
                     </div>
                 </div>
@@ -196,7 +195,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
+            <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="row mt-4">
                     <div class="col-sm-2 my-auto bg-dark text-white icon icon-big">
                         <i class="fas fa-film big"></i>
@@ -216,18 +215,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-2"></div>
         </div>
     </div>
 
     <div class="container-fluid bg-primary join-us">
-        <div class="row pt-5">
-            <div class="col-sm-12 col-md-8 text-center text-white my-auto">
+        <div class="row pt-sm-4 pt-md-5">
+            <div class="col-sm-12 col-md-8 text-center text-white">
                 <h3>
                     No more baseline setups with Us!
                 </h3>
             </div>
-            <div class="col-sm-12 col-md-4 text-sm-center">
+            <div class="col-sm-12 col-md-4 text-center">
                 <a href="{% url 'packages' %}" class="btn btn-outline-light" role="button">Join Us Now!</a>
             </div>
         </div>

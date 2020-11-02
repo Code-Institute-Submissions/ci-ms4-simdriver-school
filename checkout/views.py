@@ -11,6 +11,8 @@ from user_profiles.forms import UserProfileForm
 from user_profiles.models import UserProfile
 from cart.contexts import cart_contents
 
+import datetime
+from datetime import timedelta
 import stripe
 import json
 
@@ -132,12 +134,31 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+    orderitem = order.lineitems.get().product.name
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
+
+        # Check if user's datapack expiry date is valid
+        paid_until = order.date + timedelta(30)
+        current_date = datetime.datetime.now().date()
+
+        # Removing Datapack if it's expired from the user profile
+        if paid_until.date() < current_date:
+            paid_until = None
+            profile.active_pack_date = paid_until
+            profile.active_pack = None
+            profile.save()
+        
+        # Adding datapack info to the user profile
+        else:
+            profile.active_pack_date = paid_until
+            package = orderitem
+            profile.active_pack = package
+            profile.save()
 
         # Save the user's info
         if save_info:

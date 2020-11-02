@@ -4,6 +4,9 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 
+import datetime
+from datetime import timedelta
+
 from checkout.models import Order
 
 
@@ -24,10 +27,22 @@ def user_profile(request):
 
     orders = profile.orders.all()
 
+    # Validate the user's active datapack
+    current_date = datetime.datetime.now().date()   
+    paid_until = profile.active_pack_date
+
+    if paid_until:
+        if paid_until.date() < current_date:
+            profile.active_pack_date = None
+            profile.active_pack = None
+            profile.save()
+            messages.warning(request, 'Your active datapack has expired!')
+
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'profile': profile,
         'on_profile_page': True
     }
 

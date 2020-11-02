@@ -18,7 +18,9 @@ class UserProfile(models.Model):
     default_county = models.CharField(max_length=80, null=True, blank=True)
     default_postcode = models.CharField(max_length=20, null=True, blank=True)
     default_country = CountryField(blank_label='Country', null=True, blank=True)
-    #iracing_id = models.DecimalField(decimal_places=0, max_digits=8, null=True, blank=True)
+    active_pack = models.CharField(max_length=150, null=True, blank=True)
+    active_pack_date = models.DateTimeField(auto_now_add=False, null=True, blank=True)
+    
 
     def __str__(self):
         return self.user.username

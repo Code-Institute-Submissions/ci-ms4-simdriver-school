@@ -33,10 +33,17 @@
                 </div>
                 <div class="col-12 col-lg-7">
                     <p class="text-muted">My Package</p>
-                    <p><strong>Currently active package:</strong> You don't have an active package.</p>
-                    <p><strong>Renewal date:</strong> dasd</p>
-                    <p><strong>Access to car(s):</strong> All Cars</p>
-                    <a href="{% url 'packages' %}" class="btn btn-outline-primary">Choose your Package</a>
+                    {% if profile.active_pack %}
+                        <p><strong>Currently active package:</strong> <span>{{ profile.active_pack }}</span></p>
+                        <p><strong>Your subscription active till:</strong> {{ profile.active_pack_date }}</p>
+                        {% if profile.active_pack != 'Gold Package' %}
+                            <a href="{% url 'packages' %}" class="btn btn-outline-primary">Upgrade to Gold Package</a>
+                        {% endif %}
+                    {% else %}
+                        <p><strong>Currently active package:</strong> <span>Don't have any active data packs.</span></p>
+                        <p><strong>Your subscription active till:</strong> N/A</p>
+                        <a href="{% url 'packages' %}" class="btn btn-outline-primary">Choose your Package</a>
+                    {% endif %}
                     <hr>
                     <p class="text-muted">Order History</p>
                     <div class="order-history table-responsive">

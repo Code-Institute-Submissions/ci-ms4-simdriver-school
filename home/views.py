@@ -23,7 +23,7 @@ def packages(request):
     }
     return render(request, 'home/packages.html', context)
 
-"""
+
 def datapacks(request):
 
     products = Product.objects.all()
@@ -48,4 +48,3 @@ def dataselector(request):
         'imsa': imsa,
     }
     return render(request, 'home/dataselector.html', context)
-"""

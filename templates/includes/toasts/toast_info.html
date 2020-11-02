@@ -9,6 +9,21 @@
     </div>
     <div class="w-100 toast-capper bg-info"></div>
     <div class="toast-body bg-white">
-        {{ message }}
+        <div class="row">
+            <div class="col">
+                {{ message }}
+                <hr>                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'upgrade_to_gold' %}" class="btn btn-success btn-block">Upgrade to Gold Package</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-1">
+                <a href="{% url 'view_cart' %}" class="btn btn-outline-danger btn-block">Cancel</a>
+            </div>
+        </div>
     </div>
 </div>

@@ -19,7 +19,33 @@
     </div>
     <div class="row">
         <div class="product-container col-10 offset-1">
-            <div class="row mt-1 mb-2"></div>
+            <div class="row mt-1 mb-1 w-75 mx-auto">
+                <div class="col-sm-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <select id="dynamic_select" class="form-control" placeholder="please">
+                        <option value="">Select a category</option>
+                        <option value="{% url 'products' %}?category=imsa_series ">IMSA Series</option>
+                        <option value="{% url 'products' %}?category=imsa_michelin ">IMSA-Michelin Pilot Challange</option>
+                        <option value="{% url 'products' %}?category=ilms ">iRacing Lemans Series</option>
+                        <option value="{% url 'products' %}?category=gt3_sprint ">GT3 Sprint Series</option>
+                        <option value="{% url 'products' %}?category=open_wheeler ">Open Wheeler</option>
+                        <option value="{% url 'products' %}?category=mazda-mx5 ">Mazda MX5 Cup</option>
+                        <option value="{% url 'products' %}?category=porsche_gt3_cup ">Porsche GT3 Cup</option>  
+                        <option value="{% url 'products' %} ">Show all Categories</option>  
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <p class=" text-center text-md-left mt-3">
+                        {% if current_category  %}
+                            {% for cat in current_category %}
+                                <span class="small"><strong>{{ cat.friendly_name }}</strong> | </span>
+                            {% endfor %}
+                        {% else %}
+                            <span class="small"><strong>All categories</strong> | </span>
+                        {% endif %}
+                        {{ products|length }} Cars{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
+                </div>
+            </div>
             <div class="row mb-5">
                 <div class="accordion w-100" id="accordionExample">
                 {% for product in products %}
@@ -27,26 +53,26 @@
                         <div class="d-none"></div>
                     {% else %}
                     <div class="card w-100 mb-1 mb-lg-0">                      
-                        <div class="row product-card">
-                            <div class="col-sm-6 col-md-2" style="max-height: 75px;">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-2 product-card-img" style="max-height: 75px;">
                                 {% if product.category.image %}
                                     <img src="{{ product.category.image.url }}" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain" alt="{{ product.category.name }}">
                                 {% else %}
                                     <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain" alt="{{ product.category.name }}">
                                 {% endif %}
                             </div>
-                            <div class="col-sm-6 col-md-2" style="max-height: 75px;">
+                            <div class="col-sm-12 col-md-2" style="max-height: 75px;">
                                 {% if product.image %}
                                     <img src="{{ product.image.url }}" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain"  alt="{{ product.name }}">
                                 {% else %}
                                     <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" style="height: 100%; width: 100%; object-fit: contain"  alt="{{ product.name }}">
                                 {% endif %}
                             </div>
-                            <div class="col-md-6 my-auto">
+                            <div class="col-sm-12 col-md-6 my-auto text-sm-center text-md-left">
                                 <span class="font-weight-bold">{{ product.name }}</span><br>
                                 <small>iRacing Series: {{ product.description }}</small>
                             </div>
-                            <div class="col-md-2 my-auto text-center text-md-right">
+                            <div class="col-sm-12 col-md-2 my-auto text-center text-md-right">
                                 <a href="{% url 'product_details' product.id %}" class="btn btn-outline-primary mr-2">
                                     Details <i class="fas fa-arrow-alt-circle-right d-sm-none d-md-inline"></i>
                                 </a>
@@ -60,4 +86,19 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super}}
+<script type="text/javascript">
+    $(function(){
+        $('select').on('change', function () {
+            var url = $(this).val();
+            if (url) {
+                window.location = url;
+            }
+            return false;
+        });
+    });
+</script>
 {% endblock %}

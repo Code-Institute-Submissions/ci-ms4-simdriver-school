@@ -193,9 +193,10 @@ body {
 
 
 /* --- Product page styles --- */
-.product-card {
+.product-card-img {
     max-height: 75px;
 }
+
 
 .product-time {
     font-size: 1rem;
@@ -325,6 +326,10 @@ footer {
 
     .pic-banner {
         height: 100%;
+    }
+
+    .product-card-img {
+        max-height: 165px;
     }
 }
 

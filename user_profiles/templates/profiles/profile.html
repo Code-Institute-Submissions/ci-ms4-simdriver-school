@@ -35,12 +35,12 @@
                     <p class="text-muted">My Package</p>
                     {% if profile.active_pack %}
                         <p><strong>Currently active package:</strong> <span class="active-package mr-1"> </span>{{ profile.active_pack }}</p>
-                        <p><strong>Your subscription active till:</strong> {{ profile.active_pack_date }}</p>
+                        <p><strong>Your subscription active till:</strong> {{ profile.active_pack_date|truncatechars:12 }}</p>
                         {% if profile.active_pack != 'Gold Package' %}
                             <a href="{% url 'packages' %}" class="btn btn-outline-primary">Upgrade to Gold Package</a>
                         {% endif %}
                     {% else %}
-                        <p><strong>Currently active package:</strong> <span class="inactive-datapack mr-1"></span>Don't have any active data packs.</p>
+                        <p><strong>Currently active package:</strong> <span class="inactive-package mr-1"></span>Don't have any active data packs.</p>
                         <p><strong>Your subscription active till:</strong> N/A</p>
                         <a href="{% url 'packages' %}" class="btn btn-outline-primary">Choose your Package</a>
                     {% endif %}

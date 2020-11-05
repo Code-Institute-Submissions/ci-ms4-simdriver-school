@@ -22,29 +22,3 @@ def packages(request):
         'gold_package': gold_package,
     }
     return render(request, 'home/packages.html', context)
-
-
-def datapacks(request):
-
-    products = Product.objects.all()
-    categories = Category.objects.all()
-
-    context = {
-        'products': products,
-    }
-    return render(request, 'home/datapacks.html', context)
-
-
-def dataselector(request):
-
-    products = Product.objects.all()
-    categories = Category.objects.all()
-
-    imsa = Product.objects.filter(category__name='imsa_series')
-
-    context = {
-        'products': products,
-        'categories': categories,
-        'imsa': imsa,
-    }
-    return render(request, 'home/dataselector.html', context)

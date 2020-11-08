@@ -10,43 +10,135 @@
 {% endblock %}
 
 {% block content %}
+<!-- Setup datapacks navigation bar -->
+<div class="container-fluid bg-dark w-100 setup-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark  w-100">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#setup-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse w-100" id="setup-nav">
+            <ul class="navbar-nav w-auto mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active highlight" href="#week_1">Week 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_2">Week 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_3">Week 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_4">Week 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_5">Week 5</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_6">Week 6</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_7">Week 7</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_8">Week 8</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_9">Week 9</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_10">Week 10</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_11">Week 11</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="#week_12">Week 12</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container-fluid setup-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+
 <div class="container-fluid main bg-grey pt-4">
-    <h2 class="text-center">iRacing IMSA series</h2>
+    {% for cat in setups %}
+        {% if forloop.first %}
+            <h2 class="text-center pt-5">{{ cat.product.category.friendly_name }}</h2>
+        {% endif %}
+    {% endfor %}
     <hr class="w-25">
           
-    <div class="row mx-5">
-        <div class="col-2 text-center">
-            <div class="list-group" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-action active" id="list-week-1-list" data-toggle="list" href="#list-week-1" role="tab" aria-controls="week-1">Week 1</a>
-            <a class="list-group-item list-group-item-action" id="list-week-2-list" data-toggle="list" href="#list-week-2" role="tab" aria-controls="week-2">Week 2</a>
-            <a class="list-group-item list-group-item-action" id="list-week-3-list" data-toggle="list" href="#list-week-3" role="tab" aria-controls="messages">Week 3</a>
-            <a class="list-group-item list-group-item-action" id="list-week-4-list" data-toggle="list" href="#list-week-4" role="tab" aria-controls="settings">Week 4</a>
-            <a class="list-group-item list-group-item-action" id="list-week-4-list" data-toggle="list" href="#list-week-5" role="tab" aria-controls="settings">Week 5</a>
-            <a class="list-group-item list-group-item-action" id="list-week-4-list" data-toggle="list" href="#list-week-6" role="tab" aria-controls="settings">Week 6</a>
-            <a class="list-group-item list-group-item-action" id="list-week-4-list" data-toggle="list" href="#list-week-7" role="tab" aria-controls="settings">Week 7</a>
-            <a class="list-group-item list-group-item-action" id="list-week-4-list" data-toggle="list" href="#list-week-8" role="tab" aria-controls="settings">Week 8</a>
-            <a class="list-group-item list-group-item-action" id="list-week-4-list" data-toggle="list" href="#list-week-9" role="tab" aria-controls="settings">Week 9</a>
-            <a class="list-group-item list-group-item-action" id="list-week-4-list" data-toggle="list" href="#list-week-10" role="tab" aria-controls="settings">Week 10</a>
-            <a class="list-group-item list-group-item-action" id="list-week-4-list" data-toggle="list" href="#list-week-11" role="tab" aria-controls="settings">Week 11</a>
-            <a class="list-group-item list-group-item-action" id="list-week-4-list" data-toggle="list" href="#list-week-12" role="tab" aria-controls="settings">Week 12</a>
-            </div>
-        </div>
-        <div class="col-10">
-            <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="list-week-1" role="tabpanel" aria-labelledby="list-week-1-list">
-                <div class="row">
+    <div class="row mx-5" >
+        <div class="col-10 mx-auto">
+        {% for setup in setups %}
+            <div class="" id="{{ setup.week }}" >
+                <div style="height: 12rem;"></div>
+                <div class="row bg-grey-2 py-3 rounded">
                     <div class="col">
-                        <h4 class="text-center">Track: Spa Francochamp</h4> 
-                        <hr>
+                        <p>{{ setup.product.name }} - {{ profile.active_pack }}</p>
+                        <h4 class="text-center">{{ setup.week.friendly_name }}</h4>
+                        <h4 class="text-center">Car: <span class="font-italic">{{ setup.product.name }}</span></h4>
+                        <h4 class="text-center">Track: <span class="font-italic">{{ setup.track_name.friendly_name }}</span></h4>
+                        
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col-sm-12 col-md-12 col-lg-8">
-                        <h4 class="text-center">Hot lap video</h4>
+                        <h4 class="text-center pb-2">Hot lap video</h4>
                         
                         <div class="embed-container">
                             {% if request.user.is_authenticated %}
-                            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/3djFQVZzYqU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}
+                                    <iframe width="auto" height="auto" src="{{ setup.video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                {% else %}
+                                    {% if profile.active_pack %}    
+                                        <div class="text-center w-75 mx-auto">
+                                            <div class="row mt-5">
+                                                <div class="col mt-5">
+                                                    <hr>
+                                                    <p class="my-auto">
+                                                        Sorry your active package is: <strong>{{ profile.active_pack }}</strong>. If you want to access this setup datapack you need to upgrade to Gold Package.
+                                                    </p>
+                                                    <hr>
+                                                </div>                                            
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-sm-12 col-md-6">
+                                                    <a href="{% url 'dataselector' %}" class="btn btn-danger px-4">Back</a>
+                                                </div>                                            
+                                                <div class="col-sm-12 col-md-6 ">
+                                                    <a href="{% url 'upgrade_to_gold' %}" class="btn btn-success px-4">Upgrade to Gold Package</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="text-center w-75 mx-auto">
+                                            <div class="row mt-5">
+                                                <div class="col mt-5">
+                                                    <hr>
+                                                    <p class="my-auto">
+                                                        Sorry you don't have an active package. If you want to access setup datapacks you need to buy one of our package.
+                                                    </p>
+                                                    <hr>
+                                                </div>                                            
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-sm-12 col-md-6">
+                                                    <a href="{% url 'dataselector' %}" class="btn btn-danger px-4">Back</a>
+                                                </div>                                            
+                                                <div class="col-sm-12 col-md-6 ">
+                                                    <a href="{% url 'packages' %}" class="btn btn-success px-4">Choose Your Package</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
                             {% else %}
                             <div class="row text-center">
                                 <div class="col-12 data-error">
@@ -58,66 +150,85 @@
                         </div>
                         
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4">
-                        <h4 class="text-center">Setup Files</h4>
-                        <div class="">
-                            <div class="card text-center rounded-5">
-                                <div class="card-body ">
-                                    <h5 class="card-title">Download <i class="far fa-file"></i></h5>
-                                    <hr>
-                                    {% if request.user.is_authenticated %}
-                                    <a href="#" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Race Setup</a>
+                    <div class="col-sm-12 col-md-12 col-lg-4 ">
+                        <h4 class="text-center pb-2">Setup Files</h4>
+
+                        <div class="card text-center rounded-5">
+                            <div class="card-body">
+                                <h5 class="card-title">Download <i class="far fa-file"></i></h5>
+                                <hr>
+                                {% if request.user.is_authenticated %}
+                                    {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}
+                                        <a href="{{ setup.race_setup }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i> Race Setup</a>
                                     {% else %}
-                                    <a href="{% url 'account_login' %}" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Please Login</a>
+                                        <a href="{% url 'products' %}" class="btn btn-outline-primary setup-files-btn mt-2"><i class="fas fa-link"></i> Upgrade</a>
                                     {% endif %}
-                                    <br>
-                                    {% if request.user.is_authenticated %}
-                                    <a href="#" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Qualy Setup</a>
+                                {% else %}
+                                    <a href="{% url 'account_login' %}" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Please Login</a>
+                                {% endif %}
+                                <br>
+                                {% if request.user.is_authenticated %}
+                                    {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}
+                                        <a href="{{ setup.qual_setup }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i> Qualy Setup</a>
                                     {% else %}
-                                    <a href="{% url 'account_login' %}" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Please Login</a>
+                                        <a href="{% url 'products' %}" class="btn btn-outline-primary setup-files-btn mt-2"><i class="fas fa-link"></i> Upgrade</a>
                                     {% endif %}
-                                    <hr>
-                                    {% if request.user.is_authenticated %}
-                                    <a href="#" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i></i> Telemetry File</a>
+                                {% else %}
+                                    <a href="{% url 'account_login' %}" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Please Login</a>
+                                {% endif %}
+                                <hr>
+                                {% if request.user.is_authenticated %}
+                                    {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}
+                                        <a href="{{ setup.telemetry }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i></i> Telemetry File</a>
                                     {% else %}
-                                    <a href="{% url 'account_login' %}" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Please Login</a>
+                                        <a href="{% url 'products' %}" class="btn btn-outline-primary setup-files-btn mt-2"><i class="fas fa-link"></i> Upgrade</a>
                                     {% endif %}
-                                    <hr>
-                                    {% if request.user.is_authenticated %}
-                                    <a href="#" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> *.blap File</a>
+                                {% else %}
+                                <a href="{% url 'account_login' %}" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Please Login</a>
+                                {% endif %}
+                                <hr>
+                                {% if request.user.is_authenticated %}
+                                    {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}   
+                                        <a href="{{ setup.blap }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i> *.blap File</a>
                                     {% else %}
-                                    <a href="{% url 'account_login' %}" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Please Login</a>
+                                        <a href="{% url 'products' %}" class="btn btn-outline-primary setup-files-btn mt-2"><i class="fas fa-link"></i> Upgrade</a>
                                     {% endif %}
-                                    <hr>
-                                    {% if request.user.is_authenticated %}
-                                    <a href="#" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i></i> *.olap File</a>
+                                {% else %}
+                                <a href="{% url 'account_login' %}" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Please Login</a>
+                                {% endif %}
+                                <hr>
+                                {% if request.user.is_authenticated %}
+                                    {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}                                
+                                        <a href="{{ setup.olap }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i></i> *.olap File</a>
                                     {% else %}
-                                    <a href="{% url 'account_login' %}" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Please Login</a>
+                                        <a href="{% url 'products' %}" class="btn btn-outline-primary setup-files-btn mt-2"><i class="fas fa-link"></i> Upgrade</a>
                                     {% endif %}
-                                    <hr>
-                                    
-                                </div>
+                                {% else %}
+                                <a href="{% url 'account_login' %}" class="btn btn-outline-primary mt-2"><i class="fas fa-link"></i> Please Login</a>
+                                {% endif %}
+                                <hr>
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
-            <div class="tab-pane fade" id="list-week-2" role="tabpanel" aria-labelledby="list-week-2-list">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend " id="button-addon3">
-                        <button class="btn btn-outline-secondary" type="button">Dallara p217 LMP2</button>
-                        <button class="btn btn-outline-secondary" type="button">Button</button>
-                        <button class="btn btn-outline-secondary" type="button">Button</button>
-                        <button class="btn btn-outline-secondary" type="button">Button</button>
-                        <button class="btn btn-outline-secondary" type="button">Button</button>
-                        <button class="btn btn-outline-secondary" type="button">Button</button>
-                    </div>
-                </div>
+        
             </div>
-            <div class="tab-pane fade" id="list-week-3" role="tabpanel" aria-labelledby="list-week-3-list">.3..</div>
-            <div class="tab-pane fade" id="list-week-4" role="tabpanel" aria-labelledby="list-week-4-list">4</div>
+            <hr class="mb-3">
+        {% endfor %}
+            <div class="text-center">
+                    <a href="#week_1" class="btn btn-outline-dark">Back to the top</a>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script type="text/javascript">
+        $("#setup-nav a").on("click", function(){
+            $("#setup-nav").find(".active").removeClass("active");
+            $(this).parent().addClass("active");
+        });
+    </script>
 {% endblock %}

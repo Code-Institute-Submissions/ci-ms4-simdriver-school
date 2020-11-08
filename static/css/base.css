@@ -139,6 +139,10 @@ body {
     background-color: rgba(211, 211, 211, .5);
 }
 
+.bg-grey-2 {
+    background-color: rgba(211, 211, 211, .8);
+}
+
 .join-us {
     min-height: 150px !important;
 }
@@ -302,6 +306,24 @@ footer {
 
 .remove-item {
     cursor: pointer;
+}
+
+/* --- Setup Datapacks styles --- */
+.setup-container {
+    padding-top: 55px;
+}
+
+.setup-navbar {
+    position: fixed;
+    z-index: 100;
+}
+
+.week-link {
+    padding-top: 12rem;
+}
+
+.setup-files-btn {
+    width: 9rem;
 }
 
 /* --- Medium screen size styles --- */

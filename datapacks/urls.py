@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.dataselector, name='dataselector'),
-    path('setups/', views.datapacks, name='setups'),
+    path('<product_id>/', views.setup_details, name='setup_detail'),
 ]

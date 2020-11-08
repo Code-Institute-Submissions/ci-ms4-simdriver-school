@@ -46,6 +46,9 @@ def upgrade_to_gold(request):
 
             request.session['cart'] = {'30': 1}
             messages.success(request, 'Your package was successfuly upgraded to Gold Package!')
+        else:
+            request.session['cart'] = {'30': 1}
+            messages.success(request, 'Your package was successfuly upgraded to Gold Package!')
     except:
         messages.error(request, 'Upgrade failed. Try again later.')
 

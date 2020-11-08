@@ -1,21 +1,27 @@
-from django.shortcuts import render
-from products.models import Product, Category
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
+from products.models import Product, Category
+from .models import RaceTrack, Datapack, Week
+from user_profiles.models import UserProfile
 
 # Create your views here.
 
+@login_required
+def setup_details(request, product_id):
 
-def datapacks(request):
-
-    products = Product.objects.all()
-    categories = Category.objects.all()
-
+    setups = Datapack.objects.filter(product_id__id=product_id)
+    profile = UserProfile.objects.get(user=request.user)
+    
+    
     context = {
-        'products': products,
+        'setups': setups,
+        'profile': profile,
     }
+
     return render(request, 'datapacks/datapacks.html', context)
 
-
+@login_required
 def dataselector(request):
 
     products = Product.objects.all()

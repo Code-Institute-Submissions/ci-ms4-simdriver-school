@@ -7,6 +7,7 @@ from user_profiles.models import UserProfile
 
 # Create your views here.
 
+
 @login_required
 def setup_details(request, product_id):
 
@@ -20,6 +21,7 @@ def setup_details(request, product_id):
     }
 
     return render(request, 'datapacks/datapacks.html', context)
+
 
 @login_required
 def dataselector(request):

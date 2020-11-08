@@ -70,10 +70,10 @@
     {% for cat in setups %}
         {% if forloop.first %}
             <h2 class="text-center pt-5">{{ cat.product.category.friendly_name }}</h2>
+            <hr class="w-25">
         {% endif %}
     {% endfor %}
-    <hr class="w-25">
-          
+
     <div class="row mx-5" >
         <div class="col-10 mx-auto">
         {% for setup in setups %}
@@ -81,11 +81,9 @@
                 <div style="height: 12rem;"></div>
                 <div class="row bg-grey-2 py-3 rounded">
                     <div class="col">
-                        <p>{{ setup.product.name }} - {{ profile.active_pack }}</p>
                         <h4 class="text-center">{{ setup.week.friendly_name }}</h4>
                         <h4 class="text-center">Car: <span class="font-italic">{{ setup.product.name }}</span></h4>
                         <h4 class="text-center">Track: <span class="font-italic">{{ setup.track_name.friendly_name }}</span></h4>
-                        
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -217,7 +215,10 @@
             <hr class="mb-3">
         {% endfor %}
             <div class="text-center">
-                    <a href="#week_1" class="btn btn-outline-dark">Back to the top</a>
+                <div class="col">
+                    <a href="{% url 'dataselector'  %}" class="btn btn-outline-danger"> <i class="fas fa-arrow-left"></i> Back to Datapacks</a>
+                    <a href="#week_1" class="btn btn-outline-dark"><i class="fas fa-arrow-up"></i> Back to top <i class="fas fa-arrow-up"></i></a>
+                </div>
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@ from products.models import Product
 
 # Create your models here.
 
+
 class Week(models.Model):
     name = models.CharField(max_length=10, null=True, blank=True)
     friendly_name = models.CharField(max_length=10, null=True, blank=True)

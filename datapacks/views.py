@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from products.models import Product, Category
 from .models import RaceTrack, Datapack, Week
 from user_profiles.models import UserProfile
+from .forms import DatapackForm
 
 # Create your views here.
 
@@ -11,12 +13,12 @@ from user_profiles.models import UserProfile
 @login_required
 def setup_details(request, product_id):
 
-    setups = Datapack.objects.filter(product_id__id=product_id)
+    datapacks = Datapack.objects.filter(product_id__id=product_id)
     profile = UserProfile.objects.get(user=request.user)
     
     
     context = {
-        'setups': setups,
+        'datapacks': datapacks,
         'profile': profile,
     }
 
@@ -50,3 +52,80 @@ def dataselector(request):
 
     }
     return render(request, 'datapacks/dataselector.html', context)
+
+
+@login_required
+def add_datapack(request):
+    """ 
+    Add new datapack to the database
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store admins can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = DatapackForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added datapack!')
+            return redirect(reverse('dataselector'))
+        else:
+            messages.error(request, 'Failed to add datapack. Please ensure the form is valid.')
+    else:
+        form = DatapackForm()
+    
+    template = 'datapacks/add_datapack.html'
+    context = {
+        'form': form,
+        'on_product_management': True,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_datapack(request, datapack_id):
+    """
+    Edit/update a datapack.
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store admins can do that.')
+        return redirect(reverse('home'))
+
+    datapack = get_object_or_404(Datapack, pk=datapack_id)
+    if request.method == 'POST':
+        form = DatapackForm(request.POST, request.FILES, instance=datapack)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'The product {datapack.product.name} updated succesfully.')
+            return redirect('dataselector')
+        else:
+            messages.error(request, 'Failed to update datapack.\
+                                     Please ensure the form is valid!')
+    else:
+        form = DatapackForm(instance=datapack)
+        messages.info(request, f'You are editing {datapack.product.name}')
+
+    template = 'datapacks/edit_datapack.html'
+    context = {
+        'form': form,
+        'datapack': datapack,
+        'on_product_management': True,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_datapack(request, datapack_id):
+    """
+    Deleting a product from the store
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store admins can do that.')
+        return redirect(reverse('home'))
+
+    datapack = get_object_or_404(Datapack, pk=datapack_id)
+    datapack.delete()
+    messages.success(request, 'Datapack has been successfully deleted')
+    return redirect(reverse('dataselector'))

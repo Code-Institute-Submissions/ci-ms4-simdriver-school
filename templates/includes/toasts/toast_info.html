@@ -15,6 +15,7 @@
                 <hr>                
             </div>
         </div>
+        {% if not on_product_management %}
         <div class="row">
             <div class="col">
                 <a href="{% url 'upgrade_to_gold' %}" class="btn btn-success btn-block">Upgrade to Gold Package</a>
@@ -25,5 +26,6 @@
                 <a href="{% url 'view_cart' %}" class="btn btn-outline-danger btn-block">Cancel</a>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>

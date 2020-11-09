@@ -67,7 +67,7 @@
 </div>
 
 <div class="container-fluid main bg-grey pt-4">
-    {% for cat in setups %}
+    {% for cat in datapacks %}
         {% if forloop.first %}
             <h2 class="text-center pt-5">{{ cat.product.category.friendly_name }}</h2>
             <hr class="w-25">
@@ -76,14 +76,14 @@
 
     <div class="row mx-5" >
         <div class="col-10 mx-auto">
-        {% for setup in setups %}
+        {% for datapack in datapacks %}
             <div class="" id="{{ setup.week }}" >
                 <div style="height: 12rem;"></div>
                 <div class="row bg-grey-2 py-3 rounded">
                     <div class="col">
-                        <h4 class="text-center">{{ setup.week.friendly_name }}</h4>
-                        <h4 class="text-center">Car: <span class="font-italic">{{ setup.product.name }}</span></h4>
-                        <h4 class="text-center">Track: <span class="font-italic">{{ setup.track_name.friendly_name }}</span></h4>
+                        <h4 class="text-center">{{ datapack.week.friendly_name }}</h4>
+                        <h4 class="text-center">Car: <span class="font-italic">{{ datapack.product.name }}</span></h4>
+                        <h4 class="text-center">Track: <span class="font-italic">{{ datapack.track_name.friendly_name }}</span></h4>
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -92,8 +92,8 @@
                         
                         <div class="embed-container">
                             {% if request.user.is_authenticated %}
-                                {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}
-                                    <iframe width="auto" height="auto" src="{{ setup.video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                {% if profile.active_pack == datapack.product.name or profile.active_pack == 'Gold Package' %}
+                                    <iframe width="auto" height="auto" src="{{ datapack.video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 {% else %}
                                     {% if profile.active_pack %}    
                                         <div class="text-center w-75 mx-auto">
@@ -156,8 +156,8 @@
                                 <h5 class="card-title">Download <i class="far fa-file"></i></h5>
                                 <hr>
                                 {% if request.user.is_authenticated %}
-                                    {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}
-                                        <a href="{{ setup.race_setup }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i> Race Setup</a>
+                                    {% if profile.active_pack == datapack.product.name or profile.active_pack == 'Gold Package' %}
+                                        <a href="{{ datapack.race_setup }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i> Race Setup</a>
                                     {% else %}
                                         <a href="{% url 'products' %}" class="btn btn-outline-primary setup-files-btn mt-2"><i class="fas fa-link"></i> Upgrade</a>
                                     {% endif %}
@@ -167,7 +167,7 @@
                                 <br>
                                 {% if request.user.is_authenticated %}
                                     {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}
-                                        <a href="{{ setup.qual_setup }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i> Qualy Setup</a>
+                                        <a href="{{ datapack.qual_setup }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i> Qualy Setup</a>
                                     {% else %}
                                         <a href="{% url 'products' %}" class="btn btn-outline-primary setup-files-btn mt-2"><i class="fas fa-link"></i> Upgrade</a>
                                     {% endif %}
@@ -177,7 +177,7 @@
                                 <hr>
                                 {% if request.user.is_authenticated %}
                                     {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}
-                                        <a href="{{ setup.telemetry }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i></i> Telemetry File</a>
+                                        <a href="{{ datapack.telemetry }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i></i> Telemetry File</a>
                                     {% else %}
                                         <a href="{% url 'products' %}" class="btn btn-outline-primary setup-files-btn mt-2"><i class="fas fa-link"></i> Upgrade</a>
                                     {% endif %}
@@ -187,7 +187,7 @@
                                 <hr>
                                 {% if request.user.is_authenticated %}
                                     {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}   
-                                        <a href="{{ setup.blap }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i> *.blap File</a>
+                                        <a href="{{ datapack.blap }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i> *.blap File</a>
                                     {% else %}
                                         <a href="{% url 'products' %}" class="btn btn-outline-primary setup-files-btn mt-2"><i class="fas fa-link"></i> Upgrade</a>
                                     {% endif %}
@@ -197,7 +197,7 @@
                                 <hr>
                                 {% if request.user.is_authenticated %}
                                     {% if profile.active_pack == setup.product.name or profile.active_pack == 'Gold Package' %}                                
-                                        <a href="{{ setup.olap }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i></i> *.olap File</a>
+                                        <a href="{{ datapack.olap }}" class="btn btn-outline-dark setup-files-btn mt-2"><i class="fas fa-link"></i></i> *.olap File</a>
                                     {% else %}
                                         <a href="{% url 'products' %}" class="btn btn-outline-primary setup-files-btn mt-2"><i class="fas fa-link"></i> Upgrade</a>
                                     {% endif %}
@@ -207,6 +207,16 @@
                                 <hr>
                             </div>
                         </div>
+                        {% if request.user.is_superuser %}
+                        <div class="row text-center mt-2">
+                            <div class="col-sm-12 col-md-6">
+                                <a href="{% url 'edit_datapack' datapack.id %}" class="btn btn-info px-4">Edit/Update <i class="far fa-edit"></i></a>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <a href="{% url 'delete_datapack' datapack.id %}" class="btn btn-danger px-4">Delete <i class="fas fa-trash-alt"></i></a>
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
                 
             </div>

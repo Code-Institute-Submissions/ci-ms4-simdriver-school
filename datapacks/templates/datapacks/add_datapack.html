@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block page_header %}
+    <div class="container-fluid header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid main bg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 mx-auto text-center">
+                <h2 class="mb-4">Datapack Management</h2>
+                <hr>
+                <h5 class="text-muted">Add a New Datapack</h5>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-8 mx-auto">
+                <form method="POST" action="{% url 'add_datapack' %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="text-right">
+                        <a class="btn btn-danger" href="{% url 'dataselector' %}">Cancel</a>
+                        <button class="btn btn-outline-primary" type="submit">Add Datapack</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -13,8 +13,8 @@
 <div class="container-fluid main bg-grey py-4">
     <h2 class="text-center">Please Select Your Series and Car</h2>
     <hr class="w-75">
-    <div class="row w-75 mx-auto">
-        <div class="col-3">
+    <div class="row mx-auto">
+        <div class="col-sm-12 col-md-3">
             <div class="list-group" id="list-tab" role="tablist">
                 {% for cat in categories %}
                     {% if cat.name == 'gold_package' %}
@@ -27,7 +27,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-9">
+        <div class="col-sm-12 col-md-9">
             <div class="tab-content" id="nav-tabContent">
                 
                 <!-- Tab for the GT3 Sprint series -->
@@ -54,7 +54,7 @@
                                         <small>iRacing Series: {{ product.description }}</small>
                                     </div>
                                     <div class="col-sm-12 col-md-3 my-auto text-center text-md-right">
-                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2">
+                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2 my-2">
                                             Datapacks <i class="fas fa-arrow-alt-circle-right d-sm-none d-md-inline"></i>
                                         </a>
                                     </div>
@@ -88,7 +88,7 @@
                                         <small>iRacing Series: {{ product.description }}</small>
                                     </div>
                                     <div class="col-sm-12 col-md-3 my-auto text-center text-md-right">
-                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2">
+                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2 my-2">
                                             Datapacks <i class="fas fa-arrow-alt-circle-right d-sm-none d-md-inline"></i>
                                         </a>
                                     </div>
@@ -122,7 +122,7 @@
                                         <small>iRacing Series: {{ product.description }}</small>
                                     </div>
                                     <div class="col-sm-12 col-md-3 my-auto text-center text-md-right">
-                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2">
+                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2 my-2">
                                             Details <i class="fas fa-arrow-alt-circle-right d-sm-none d-md-inline"></i>
                                         </a>
                                     </div>
@@ -156,7 +156,7 @@
                                         <small>iRacing Series: {{ product.description }}</small>
                                     </div>
                                     <div class="col-sm-12 col-md-3 my-auto text-center text-md-right">
-                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2">
+                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2 my-2">
                                             Datapacks <i class="fas fa-arrow-alt-circle-right d-sm-none d-md-inline"></i>
                                         </a>
                                     </div>
@@ -190,7 +190,7 @@
                                         <small>iRacing Series: {{ product.description }}</small>
                                     </div>
                                     <div class="col-sm-12 col-md-3 my-auto text-center text-md-right">
-                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2">
+                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2 my-2">
                                             Datapacks <i class="fas fa-arrow-alt-circle-right d-sm-none d-md-inline"></i>
                                         </a>
                                     </div>
@@ -224,7 +224,7 @@
                                         <small>iRacing Series: {{ product.description }}</small>
                                     </div>
                                     <div class="col-sm-12 col-md-3 my-auto text-center text-md-right">
-                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2">
+                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2 my-2">
                                             Datapacks <i class="fas fa-arrow-alt-circle-right d-sm-none d-md-inline"></i>
                                         </a>
                                     </div>
@@ -258,7 +258,7 @@
                                         <small>iRacing Series: {{ product.description }}</small>
                                     </div>
                                     <div class="col-sm-12 col-md-3 my-auto text-center text-md-right">
-                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2">
+                                        <a href="{% url 'setup_detail' product.id %}" class="btn btn-outline-primary mr-2 my-2">
                                             Datapacks <i class="fas fa-arrow-alt-circle-right d-sm-none d-md-inline"></i>
                                         </a>
                                     </div>

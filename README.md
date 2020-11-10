@@ -1,41 +1,72 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# SimDriver School
+Milestone project 4: Full Stack Frameworks with Django.
 
-Welcome USER_NAME,
+This project is an e-commerce shop which is providing help to sim racers with weekly setups and videos to improove their laptimes and consistency with the sim title iRacing.com.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+Link to the live site on Heroku: [here]
 
-## Gitpod Reminders
+responsive image
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## User Experience (UX)
 
-`python3 -m http.server`
+- ### User Stories
+    - #### First Time Visitors Goals
 
-A blue button should appear to click: *Make Public*,
+    - #### Returning Visitors Goals
 
-Another blue button should appear to click: *Open Browser*.
+    - #### Frequent User Goals
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: *Make Public*,
+- ### Design
 
-Another blue button should appear to click: *Open Browser*.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+## Features
+- Responsive design on all device screen sizes
 
-## Updates Since The Instructional Video
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+---
+## Technologies Used
+### Programming Languages Used
+* HTML
+* CSS
+* JavaScript
+* Python
+### Programs, Frameworks and Libraries Used
+* [Django Framework (Python)](https://www.djangoproject.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [Bootstrap 4](https://getbootstrap.com/)
+* [Font Awesome](https://fontawesome.com/)
+* [GitHub Desktop](https://desktop.github.com/)
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Favicon generator](https://favicon.io)
+* [Heroku](https://heroku.com)
+* [GIMP - GNU Image Manipulation Program](https://www.gimp.org/)
+---
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed along with other common files.
+## Testing
+### Responsiveness 
+The site was tested with multiple browsers(Opera, Firefox, Chrome, MS Edge) and devices(desktop PC, iPad mini, iPhone SE 2020 and iPhone 6), and with all the options from Chrome Development tools. The pictures and the design were responsive and displayed as they should be. I asked few friends and family members to test the site on their device.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Code Validation
+* Validated the HTML code with [W3C](https://validator.w3.org/#validate_by_input) and no error found.
+* Validated the CSS code with [W3C](https://jigsaw.w3.org/css-validator/#validate_by_input) and no error found.
+* Validated the Python code with [PEP8online](http://pep8online.com/) and no error found.
+* Validated the JavaScript code with [JSHint](https://jshint.com/) and no error found. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Testing User Stories from User Experience (UX) Section
+- #### First Time Visitor Goals
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- #### Returning Visitor Goals
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- #### Frequent User Goals
 
---------
+### Manual Testing
+- #### Navbar, Footer and all other links 
+    - Tested all the links in the navigation bar and in the footer manually.
+    - All the social media links are using the `target="_blank"` attribute and they opening in a new tab of the browser.
+    - No broken links found during the testing. All the links are pointing on the correct section of the site. 
 
-Happy coding!
+
+## Media / pictures
+- The landing page background images are from [iRacing.com](https://www.iracing.com/)
+- The placeholder image was created with GiMP

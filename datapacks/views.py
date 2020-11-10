@@ -7,6 +7,9 @@ from .models import RaceTrack, Datapack, Week
 from user_profiles.models import UserProfile
 from .forms import DatapackForm
 
+import datetime
+from datetime import timedelta
+
 # Create your views here.
 
 
@@ -16,6 +19,16 @@ def setup_details(request, product_id):
     datapacks = Datapack.objects.filter(product_id__id=product_id)
     profile = UserProfile.objects.get(user=request.user)
     
+    # Validate the user's active datapack
+    current_date = datetime.datetime.now().date()   
+    paid_until = profile.active_pack_date
+
+    if paid_until:
+        if paid_until.date() < current_date:
+            profile.active_pack_date = None
+            profile.active_pack = None
+            profile.save()
+            messages.info(request, 'Your active datapack has expired!')
     
     context = {
         'datapacks': datapacks,

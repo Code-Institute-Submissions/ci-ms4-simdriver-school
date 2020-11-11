@@ -1,0 +1,1 @@
+web: gunicorn simracing_school.wsgi:application

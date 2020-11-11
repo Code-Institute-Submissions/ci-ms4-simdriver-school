@@ -26,4 +26,5 @@
 {"pk": 26, "model": "products.product", "fields": {"sku": "ow-formularenault2.0", "name": "Formula Renault 2.0", "description": "Formula Renault 2.0", "price": 4.99, "category": 5, "image_url": "", "image": "cars/formula-renault-2-0.jpg"}},
 {"pk": 27, "model": "products.product", "fields": {"sku": "ow-dallaraformula3", "name": "Dallara Formula 3", "description": "Dallara Formula 3", "price": 4.99, "category": 5, "image_url": "", "image": "cars/dallara.jpg"}},
 {"pk": 28, "model": "products.product", "fields": {"sku": "porsche-gt3-cup", "name": "Porsche GT3 Cup", "description": "Porsche GT3 Cup", "price": 4.99, "category": 6, "image_url": "", "image": "cars/porsche.jpg"}},
-{"pk": 29, "model": "products.product", "fields": {"sku": "mazda-mx5-cup", "name": "Mazda MX5 Cup", "description": "Mazda MX5 Cup", "price": 4.99, "category": 7, "image_url": "", "image": "cars/mx5-cup.jpg"}}]
+{"pk": 29, "model": "products.product", "fields": {"sku": "mazda-mx5-cup", "name": "Mazda MX5 Cup", "description": "Mazda MX5 Cup", "price": 4.99, "category": 7, "image_url": "", "image": "cars/mx5-cup.jpg"}},
+{"pk": 30, "model": "products.product", "fields": {"sku": "gold-package-30days", "name": "Gold Package", "description": "Gold Package - Get access to all cars, setups", "price": 9.99, "category": 8, "image_url": "", "image": "gold_aHK30hJ.png"}}]

@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="col-sm-4 col-md-2 col-lg-2 my-auto mx-auto pt-1 d-none d-lg-block">
-                <img class="img-fluid" src="/media/silver.png">
+                <img class="img-fluid" src="{{ MEDIA_URL }}/silver.png">
             </div>
         </div>
     </div>
@@ -97,7 +97,7 @@
     <div class="container-fluid bg-grey gold">
         <div class="row mt-5 mb-5">
             <div class="col-sm-12 col-md-4 col-lg-2 my-auto mx-auto d-none d-lg-inline">
-                <img class="pl-2 img-fluid" src="/media/gold.png">
+                <img class="pl-2 img-fluid" src="{{ MEDIA_URL }}/gold.png">
             </div>
             <div class="col-sm-12 col-md-4 mx-auto mb-3">
                 <div class="card mx-auto package-list">
@@ -156,17 +156,17 @@
         <div class="row text-center pic-banner">
             <div class="col-sm-12 col-md-4 my-auto pt-4">
                 <a href="{% url 'crewchief' %}" target="_blank">
-                    <img class="img-fluid" src="/media/crewchief.jpg" alt="Crew Chief logo">
+                    <img class="img-fluid" src="{{ MEDIA_URL }}/crewchief.jpg" alt="Crew Chief logo">
                 </a>
             </div>
             <div class="col-sm-12 col-md-4 my-auto pt-4">
                 <a href="{% url 'iracing' %}" target="_blank">
-                    <img class="img-fluid" src="/media/iracinglogo.png" alt="iRacing.com logo">
+                    <img class="img-fluid" src="{{ MEDIA_URL }}/iracinglogo.png" alt="iRacing.com logo">
                 </a>
             </div>
             <div class="col-sm-12 col-md-4 my-auto pt-4">
                 <a href="{% url 'tradingpaints' %}" target="_blank">
-                    <img class="img-fluid" src="/media/tradingpaints.png" alt="TradingPaints logo">
+                    <img class="img-fluid" src="{{ MEDIA_URL }}/tradingpaints.png" alt="TradingPaints logo">
                 </a>
             </div>
         </div>
@@ -233,15 +233,18 @@
         </div>
     </div>
     
+{% endblock %}
+
+{% block postloadjs %}
     <!-- Background animation -->
     <script type="text/javascript">
         const mainWrap = $('.main-wrap');
 
         const backgrounds = new Array(
-            'url(/media/season4-breaker.jpg)',
-            'url(/media/wheel-finishes-1.jpg)',
-            'url(/media/porsche-cup.png)',
-            'url(/media/dallara-p217.jpg)'
+            'url(https://ci-ms4-simracing-school.s3.eu-west-2.amazonaws.com/media/season4-breaker.jpg)',
+            'url(https://ci-ms4-simracing-school.s3.eu-west-2.amazonaws.com/media/wheel-finishes-1.jpg)',
+            'url(https://ci-ms4-simracing-school.s3.eu-west-2.amazonaws.com/media/porsche-cup.png)',
+            'url(https://ci-ms4-simracing-school.s3.eu-west-2.amazonaws.com/media/dallara-p217.jpg)'
         );
 
         let current = 0;
@@ -260,4 +263,3 @@
         mainWrap.css('background-size', 'cover');
     </script>
 {% endblock %}
-

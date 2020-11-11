@@ -14,7 +14,7 @@
     <h2 class="text-center">Please Select Your Series and Car</h2>
     <hr class="w-75">
     <div class="row mx-auto">
-        <div class="col-sm-12 col-md-3">
+        <div class="col-sm-12 col-md-3 mx-auto">
             <div class="list-group" id="list-tab" role="tablist">
                 {% for cat in categories %}
                     {% if cat.name == 'gold_package' %}
@@ -27,7 +27,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-sm-12 col-md-9">
+        <div class="col-sm-12 col-md-8 mx-auto">
             <div class="tab-content" id="nav-tabContent">
                 
                 <!-- Tab for the GT3 Sprint series -->

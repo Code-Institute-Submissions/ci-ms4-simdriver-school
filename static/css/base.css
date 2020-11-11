@@ -5,7 +5,6 @@ html {
 
 body {
     min-height: 100% !important;
-    width: 100%;
 }
 
 .main {
@@ -116,6 +115,10 @@ body {
 .price-tag-silver {
     border: 1px solid rgb(192, 192, 192);
     color:rgb(192, 192, 192);
+}
+
+.package-card {
+    width: 25rem;
 }
 
 .silver {
@@ -335,6 +338,10 @@ footer {
         padding-top: 80px;
     }
 
+    .main-container {
+        top: 110px;
+    }
+
     .info-bar {
         height: 300px;
         width: 100vw;
@@ -369,7 +376,18 @@ footer {
 
     .package-list {
         min-width: 15rem;
+    }
 
+    .package-card {
+        width: 20rem;
+    }
+
+    .main-container {
+        top: 175px;
+    }
+
+    .highlight:hover {
+        border-top: none;
     }
 
     /* --- Product page styles --- */

@@ -15,17 +15,19 @@
                 <hr>                
             </div>
         </div>
-        {% if not on_product_management %}
-        <div class="row">
-            <div class="col">
-                <a href="{% url 'upgrade_to_gold' %}" class="btn btn-success btn-block">Upgrade to Gold Package</a>
+        {% if request.user.is_authenticated %}
+            {% if not on_product_management %}
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'upgrade_to_gold' %}" class="btn btn-success btn-block">Upgrade to Gold Package</a>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col mt-1">
-                <a href="{% url 'view_cart' %}" class="btn btn-outline-danger btn-block">Cancel</a>
+            <div class="row">
+                <div class="col mt-1">
+                    <a href="{% url 'view_cart' %}" class="btn btn-outline-danger btn-block">Cancel</a>
+                </div>
             </div>
-        </div>
+            {% endif %}
         {% endif %}
     </div>
 </div>

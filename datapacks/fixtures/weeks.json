@@ -1,0 +1,12 @@
+[{"pk": 1, "model": "datapacks.week", "fields": {"name": "week_1", "friendly_name": "Week 1"}},
+{"pk": 2, "model": "datapacks.week", "fields": {"name": "week_2", "friendly_name": "Week 2"}},
+{"pk": 3, "model": "datapacks.week", "fields": {"name": "week_3", "friendly_name": "Week 3"}},
+{"pk": 4, "model": "datapacks.week", "fields": {"name": "week_4", "friendly_name": "Week 4"}},
+{"pk": 5, "model": "datapacks.week", "fields": {"name": "week_5", "friendly_name": "Week 5"}},
+{"pk": 6, "model": "datapacks.week", "fields": {"name": "week_6", "friendly_name": "Week 6"}},
+{"pk": 7, "model": "datapacks.week", "fields": {"name": "week_7", "friendly_name": "Week 7"}},
+{"pk": 8, "model": "datapacks.week", "fields": {"name": "week_8", "friendly_name": "Week 8"}},
+{"pk": 9, "model": "datapacks.week", "fields": {"name": "week_9", "friendly_name": "Week 9"}},
+{"pk": 10, "model": "datapacks.week", "fields": {"name": "week_10", "friendly_name": "Week 10"}},
+{"pk": 11, "model": "datapacks.week", "fields": {"name": "week_11", "friendly_name": "Week 11"}},
+{"pk": 12, "model": "datapacks.week", "fields": {"name": "week_12", "friendly_name": "Week 12"}}]

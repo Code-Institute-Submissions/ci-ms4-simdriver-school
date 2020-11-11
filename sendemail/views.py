@@ -23,7 +23,7 @@ def contactView(request):
                     subject, 
                     message, 
                     from_email, 
-                    ['contactus@simracingschool.com']
+                    ['krisztian.keseru@gmail.com']
                 )
                 messages.success(request, 'Your message was sent! Thank you \
                                  for your message.')

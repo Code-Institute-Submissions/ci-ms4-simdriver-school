@@ -25,7 +25,7 @@
                         <div class="card-header" id="heading-1-a">
                             <h2 class="mb-0">
                             <button class="btn btn-block text-left font-italic font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse-1-a" aria-expanded="true" aria-controls="collapse-1-a">
-                                What is the SimRacing School? <i class="fas fa-chevron-down"></i>
+                                What is the SimRacing School?
                             </button>
                             </h2>
                         </div>
@@ -112,7 +112,7 @@
                         </div>
                         <div id="collapse-6-a" class="collapse" aria-labelledby="heading-6-a" data-parent="#faqs-general">
                             <div class="card-body">
-                                Just send a message to us via our <a href="#">contact form</a> or ask it on our Discord server. We or our community will answer your question as soon as possible.
+                                Just send a message to us via our <a href="{% url 'contact' %}">contact form</a> or ask it on our Discord server. We or our community will answer your question as soon as possible.
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                         <div id="collapse-3-b" class="collapse" aria-labelledby="heading-3-b" data-parent="#faqs-payment">
                             <div class="card-body">
                                 Yes! So that larger teams also have an advantage of creating multiple accounts, we offer special discounts. You are in a team and would like to have a decent discount on your 
-                                account? Please write an email to <a href="mailto:team.discount@simracingschool.com">team.discount@simracingschool.com</a> or use the contact us section of our page with your team details, so we can make you an offer directly.
+                                account? Please write an email to <a href="mailto:team.discount@simracingschool.com">team.discount@simracingschool.com</a> or use the <a href="{% url 'contact' %}">contact us</a> section of our page with your team details, so we can make you an offer directly.
                             </div>
                         </div>
                         <div class="card-header" id="heading-4-b">
@@ -242,7 +242,7 @@
                         <div class="card-header" id="heading-4-c">
                             <h2 class="mb-0">
                             <button class="btn btn-block text-left font-italic font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse-4-c" aria-expanded="true" aria-controls="collapse-4-c">
-                                What is a .blap and an .olap file? <i class="fas fa-chevron-down card-arrow"></i>
+                                What is a .blap and an .olap file?
                             </button>
                             </h2>
                         </div>
@@ -258,7 +258,7 @@
                         <div class="card-header" id="heading-5-c">
                             <h2 class="mb-0">
                             <button class="btn btn-block text-left font-italic font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse-5-c" aria-expanded="true" aria-controls="collapse-5-c">
-                                How can I use the .blap and .olap file? <i class="fas fa-chevron-down card-arrow"></i>
+                                How can I use the .blap and .olap file?
                             </button>
                             </h2>
                         </div>
@@ -288,7 +288,6 @@
     $('.btn-block').click(function(e) {
         $('.btn-block').css('color', '#000');
         $(this).css('color', '#fff');
-    })
-    
+    });
 </script>
 {% endblock %}

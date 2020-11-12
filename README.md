@@ -3,27 +3,97 @@ Milestone project 4: Full Stack Frameworks with Django.
 
 This project is an e-commerce shop which is providing help to sim racers with weekly setups and videos to improove their laptimes and consistency with the sim title iRacing.com.
 
-Link to the live site on Heroku: [here]
+Link to the live site on Heroku: [here](https://ci-ms4-simracing-school.herokuapp.com/)
 
-responsive image
+<img src="media/simracing_school.png">
 
 ## User Experience (UX)
 
 - ### User Stories
     - #### First Time Visitors Goals
-
+        1. Want to easily understand the main purpose of the site.
+        2. Want to be able to easily navigate throughout the site to find content.
+        3. Want to easily find social media links, so I can gather more information about the site and site owner
+        4. To view a list of products so I can select some to purchase.
+        5. View individual products details so I can identify the price, description, time duration if applicable
     - #### Returning Visitors Goals
-
+        1. Want to view the total of my purchases so I can manage to don't spend too much.
+        2. Easy registration process
+        3. Easily login or logout to access my personal account information
+        4. Receive an email confirmation after registering, so I can verify that my account registration was successful.
+        5. Have a user profile, to check my personal order history, to view my active data pack and the expiry date of my active data pack, and save my payment information.
+        6. Sort a specific category of product to easily find the right product for my needs.
     - #### Frequent User Goals
-
+        1. Receive a notification when my active data pack is expired.
+        2. If I have any questions I would be able to find the right answer or able to contact the site owner.
+        3. I want to get the best deals if it's possible when I'm purchasing data packs.
+        4. Want to be able to download my purchased data before the specific week starts in iRacing to have enough time to practice.
+    - #### Site Owner Goals
+        1. Want to view and adjust customer orders.
+        2. Easily update the setup data packs.
 
 - ### Design
+    - Colour Scheme
+        - The main 3 white, lightgrey (rgba(211, 211, 211, .5)), and blue (#007bff) colours was used through the site. For the footer used an "asphalt" style background with white fonts.
+    - Typography
+        - The default font was not changed except the landing page hero logo Russo One was used for that. 
 
+- ### Wireframes
+    - Landing page [view]
+    - Packages page [view]
+    - Series/Cars page [view]
+    - Datapacks page [view]
+    - F.A.Q. page [view]
+    - Contact Us page [view]
 
 ## Features
 - Responsive design on all device screen sizes
+- Interactive background on the landing page created with JavaScript
 
-
+### Existing Features
+- ### Landing Page
+    - When the site will be loaded the users should find themselves on the landing page, where they can see the brand logo in the middle and an interactive background which is changing periodically. After scrolling down they can view some achievements reached by us. Further down can be found the detailed information of our two packages (silver, gold) and what is the difference between them. By scrolling further down they can find advertisement links from our partners and why they should choose our service. At the bottom of the page, there is a footer with some quick links, info and social media links.
+- ### Navigation Bar
+    - #### Top Navigation Bar
+        - On the left is a brand logo with a link to the landing page which is visible only on large screens
+        - On the middle is a search bar to browse between products. On smaller screens, the bar collapse into a search icon
+        - On the right is the user and the cart icons to manage user profile and shopping.
+    - #### Navigation bar
+        - __*Home*__ - Link to the landing page
+        - __*Packages*__ - Choose between two packages Silver (a single setup package) or Gold (all packages are avaiable).
+        - __*Series/Cars*__ - A list of series and cars which we are providing setups for. 
+        - __*Data Packs*__ - Users are able to download setup data packs from here after they purchased it.  
+        - __*F.A.Q.*__ - By clicking this link users can see the most frequent questions and the answers.
+        - __*Contact Us*__ - By clicking the contact us link the contact form will be displayed where users are able to send messages to the site owner(s).
+- ### Packages page
+    - Users can see our two packages with detailed info about what is included in these packages. Price, duration etc. They are able to add the Gold package to the cart from this page and choose the selected car for the Silver package.
+- ### Series/Cars page
+    - This page is displaying the available series and cars for the Silver Package. The user can choose the selected package from here and add to the cart. On the top, there is a dropdown menu to select the specific series only which will display only the cars are available in that specific series. 
+    - By clicking on the __*Details*__ button a new page will be open with detailed info about that car, data pack. Click on the __*Add to cart*__ button they can add the selected product to the cart.
+    - If the users try to add more than one single data pack to the cart they will receive a short info message that they should upgrade to the Gold Package for the same price and they will be able to access all of the setup data packs for all cars. They can do it with a simple click on the __*Upgrade to Gold Package*__ button.
+    - Site admins will see two buttons to __*Edit/Update*__ or __*Delete*__ that specific product from the database.
+- ### Datapacks page
+    - These pages are required to be logged in if the user is not logged in they will ask to login
+    - __*Datapack select page*__ - First, the users will be able to see on the left side a list from the series. By clicking on one of the series buttons, the available cars will be displayed on the right side of the screen. To the actual setup data, they need to click on the __*Datapacks*__ button on the selected car's row.
+    - __*Datapacks page*__ 
+        - First, the page will check if the user has any data pack purchased, if not they will be informed that there is no active data pack found in the database and they need to purchase one to reach these page content. 
+        - If a user has a single (Silver Package) data pack the page will check which data pack has the user purchased and will give access to only that one data pack. If they try to access some different data pack the page will inform the user if they want to access that specific pack they need to upgrade to Gold Package with a button to do the upgrade. 
+        - If a user has access to the specific data pack or all of them they are able to see an extra navigation bar with a link to every 12 weeks and go back to the data pack select page. For each week they can find the week number, the car info and the track name in the top, followed by the hot lap video on the left (which is just a dummy video now just to see how it's would look like in real production) and the setup files on the right. There are five different files for each week/car combo. The files are: race setup, qualifying setup, telemetry data file, .blap file (best lap) and .olap file (optimal lap). The file names containing the series, week, car, "r" for race and "q" for quali setup details. e.q.(*imsa-w1-bmw-m8-gte-r.sto*) for clarity that the user knows which file is for which car and week.
+        - __*Admins*__ - Can find options to edit/update or delete the datapacks week by week.
+- ### F.A.Q. page
+    - Users are able to find answers to some frequently asked questions. There are three groups of questions like: General, Payment, Packages. They need to click on the question and the answer will slide down and the background of the active question will turn blue to highlight it.
+- ### Contact Us page
+    - Users will see a form to contact the site owner. They need to fill out the form with the required informations like email, subject and the message and click the __*Send Message*__ button. If the form is valid the user will notice a small message window on the top left corner that the message was sent successfully. If there was some error it will be displayed at the same place.
+- ### Profile page
+    - Users are able to find information about their profile like:
+        - The default account info on the left. Which are phone number, address of the user to easier checkout. If this informations are saved the page will prefill the checkout form for the user.
+        - On the right are two sections, My Package and Order History.
+            - __My package__: Displays if the user has any currently active package and the date when the package will expire. If they have a single setup data pack there will be a button displayed to upgrade to gold package or if the user don't have any active data pack the button will take the users to the products(cars) list page to choose one.
+            - __Order history__: Users are able to see all past orders what they purchased. By clicking on the order number they can see the detailed order info with the products, date, email, phone number and address. The button under the displayed info will take the user back to the profile page.
+- ### Shopping Cart page
+    - If the user added anything to the cart they can see the product name, quantity, price, and total price here. They can remove the items from the cart with clicking on the red trashbin icon. Under the total price they can find two buttons to keep shopping or go to secure checkout. If they don't have any item in the cart the page will display a message that the cart is empty and a button to the products page.
+- ### Checkout page
+    - This page 
 ---
 ## Technologies Used
 ### Programming Languages Used
@@ -31,6 +101,7 @@ responsive image
 * CSS
 * JavaScript
 * Python
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) template language
 ### Programs, Frameworks and Libraries Used
 * [Django Framework (Python)](https://www.djangoproject.com/)
 * [Google Fonts](https://fonts.google.com/)
@@ -38,9 +109,13 @@ responsive image
 * [Font Awesome](https://fontawesome.com/)
 * [GitHub Desktop](https://desktop.github.com/)
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Favicon generator](https://favicon.io)
+* [Stripe payments](https://stripe.com/gb)
 * [Heroku](https://heroku.com)
+* [AWS S3](http://aws.amazon.com/)
 * [GIMP - GNU Image Manipulation Program](https://www.gimp.org/)
+### Databases
+* Sqlite3 in development
+* PostgreSQL in production (by Heroku)
 ---
 
 ## Testing
@@ -67,6 +142,11 @@ The site was tested with multiple browsers(Opera, Firefox, Chrome, MS Edge) and 
     - No broken links found during the testing. All the links are pointing on the correct section of the site. 
 
 
+# Credits
 ## Media / pictures
-- The landing page background images are from [iRacing.com](https://www.iracing.com/)
+- The landing page background images, the series logos and car logos are from [iRacing.com](https://www.iracing.com/)
 - The placeholder image was created with GiMP
+
+## Tutorials used, to get inspired
+- [learndjango.com](https://learndjango.com/tutorials/django-email-contact-form)
+- [Katie Cunningham's Introduction to Django](https://www.youtube.com/watch?v=K74_bKyNDd4)

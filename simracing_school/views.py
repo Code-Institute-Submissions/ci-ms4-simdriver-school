@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.base import RedirectView
 
@@ -20,7 +20,7 @@ class iRacing(RedirectView):
     url = 'https://iracing.com'
 
 
-class TradingPaints(RedirectView):
+class TPaints(RedirectView):
     url = 'https://tradingpaints.com'
 
 

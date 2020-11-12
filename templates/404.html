@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container-fluid header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_title %}404 Error Page{% endblock %}
+
+{% block content %}
+<div class="container-fluid main bg-grey">
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Page Not Found - 404</h1>
+            <p class="lead">Sorry, The page you requested is missing or doues not exist. </p>
+            <hr class="my-4">
+            <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button">Back to the Site</a>
+          </div>
+    </div>
+</div>
+
+{% endblock %}

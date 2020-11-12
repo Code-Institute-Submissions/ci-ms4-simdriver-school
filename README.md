@@ -1,7 +1,13 @@
 # SimDriver School
 Milestone project 4: Full Stack Frameworks with Django.
 
-This project is an e-commerce shop which is providing help to sim racers with weekly setups and videos to improove their laptimes and consistency with the sim title iRacing.com.
+This project is an e-commerce shop selling digital content which is providing help to sim racers with weekly setups and videos to improove their laptimes and consistency with the sim title iRacing.com. 
+
+### For testing the Stripe checkout use the following:
+ - __Card number__: 4242 4242 4242 4242
+ - __CVC__: any 3 digits
+ - __Card expiry date__: any future date
+ - __ZIP/Postcode__: any 5 digits
 
 Link to the live site on Heroku: [here](https://ci-ms4-simracing-school.herokuapp.com/)
 
@@ -45,7 +51,7 @@ Link to the live site on Heroku: [here](https://ci-ms4-simracing-school.herokuap
     - Datapacks page [view]
     - F.A.Q. page [view]
     - Contact Us page [view]
-
+---
 ## Features
 - Responsive design on all device screen sizes
 - Interactive background on the landing page created with JavaScript
@@ -90,10 +96,23 @@ Link to the live site on Heroku: [here](https://ci-ms4-simracing-school.herokuap
         - On the right are two sections, My Package and Order History.
             - __My package__: Displays if the user has any currently active package and the date when the package will expire. If they have a single setup data pack there will be a button displayed to upgrade to gold package or if the user don't have any active data pack the button will take the users to the products(cars) list page to choose one.
             - __Order history__: Users are able to see all past orders what they purchased. By clicking on the order number they can see the detailed order info with the products, date, email, phone number and address. The button under the displayed info will take the user back to the profile page.
+    - Admins have two extra options on their profile menu which are __*Product Management*__ and __*Datapack Management*__. Whit these options they can add new product and data pack to the database.
 - ### Shopping Cart page
     - If the user added anything to the cart they can see the product name, quantity, price, and total price here. They can remove the items from the cart with clicking on the red trashbin icon. Under the total price they can find two buttons to keep shopping or go to secure checkout. If they don't have any item in the cart the page will display a message that the cart is empty and a button to the products page.
 - ### Checkout page
-    - This page 
+    - This page has two sections on the right a detailed order summary and on the left a checkout form that takes the user's details (name, email, phone, address) and a payment section provided by Stripe that takes teh card number, expiry date, CVC and ZIP/Postcode. Stripe payment is in test mode so no payments are taken from the users. By clicking on the __*Complete Order*__ button the payment will be processed and the details given checked. If everything was valid the payment will made. The user will be redirected to the __Checkout Success__ page.
+- ### Checkout Success page
+    - The user will be able to view a summary from his/her order. Containing every information about the purchase (order number, date, product(s), billing info, email). On the top right corned a message will be displayed that the confirmation email sent to the user's email address. Under the order summary there is a button __*Now check out your new datapack(s)*__ with a link to the datapacks.
+- ### Footer
+    Footer has three main sections:
+    - __*Left*__: There are some quick links (packages, FAQs and Contact Us)
+    - __*Middle*__: Contains information from the site, the creation date and from who created it.
+    - __*Right*__: Social media links. 
+### Future Features
+- ### Driver coaching 
+    - The users will be able to book appointments for the 1:1 coaching sessions.
+- ### Setups for the big events
+    - Planning to provide setups for the big events of iRacing like (24h LeMans, 24h Spa, etc.)
 ---
 ## Technologies Used
 ### Programming Languages Used
@@ -130,23 +149,71 @@ The site was tested with multiple browsers(Opera, Firefox, Chrome, MS Edge) and 
 
 ### Testing User Stories from User Experience (UX) Section
 - #### First Time Visitor Goals
-
+    - Want to easily understand the main purpose of the site
+        1. On the landing page is a big logo displayed in the middle of the screen with a site name and purpose
+        2. Further, down on the landing page, they can find more detailed info about the site and what services are offered to the users 
+    - Want to be able to easily navigate throughout the site to find content
+        1. The navigation bar is always visible on the top of the page with all the links which can take the user directly to that section which is needed
+        2. The search bar can be used to find the product which the user is looking for
+    - Want to easily find social media links, so I can gather more information about the site and site owner
+        1. The footer is visible all the time on the bottom of the site with the social media links.
+        2. When the user using these social media links they will open in a new tab, so they will not loose where they were on the site
+    - To view a list of products so I can select some to purchase
+        1. Under the Packages menu in the navigation bar users can find what packages the site is offering.
+        2. If the user choose to buy a single setup package (Silver Package) then they are able to choose between 29 cars under the Series/Cars section. 
+    - View individual products details so I can identify the price, description, time duration if applicable
+        1. By clicking on the __*Details*__ button on the selected product/car a new site will be opened with the detailed information of the product/car like name, series name, price, time duration. 
 - #### Returning Visitor Goals
-
+    - Want to view the total of my purchases so I can manage to don't spend too much.
+        1. In the top right of the site they can see the cart icon
+        2. Anytime something is added to the cart that will be displayed with a success message and instantly update the total price under the cart icon so users can track their spending all the time
+    - Easy registration process
+        1. For the registration users needed three things only (email, username, and password)
+        2. To verify their email they need to click on a verify email link which is sent to their email address. 
+    - Easily login or logout to access my personal account information
+        1. Under the __*My account*__ menu they can find the login or logout links.
+        2. Just click on these links and the users are able to login after they filled out the login form with the required information (username or email, and password). To logout click on the logout link and the site will ask the user to confirm the logout. 
+    - Receive an email confirmation after registering, so I can verify that my account registration was successful.
+        1. After they click on the sign up button on the top left corner a message will be displayed that the registration was successful
+        1. Every user will receive an email after registration to verify their email address, which is also indicating the registration was successful. 
+    - Have a user profile, to check my personal order history, to view my active data pack and the expiry date of my active data pack, and save my payment information.
+        1. All users has a user profile, it's auto-created when the user is registering to the site.
+        2. All past orders what the user did are displayed in the __Order History__ on the user profile page.
+        3. If the user have an active data pack that's displayed on the top right section of the user profile page. If they don't have it a the site tells the user that there is no active data pack on their profile and displays a button to the products page to buy one.
+        4. Under the active data pack they can find the expiry date of the current active package.
+        5. While the checkout process the users are able to save the billing informations to their profile for faster more comfortable checkouts in the future. To do this they just simply need to tick the __Save Info__ checkbox before completting the order.
+    - Sort a specific category of product to easily find the right product for my needs.
+        1. On the product/cars page users can find a dropdown selection element. With that selection they are able to filter the products by categories/series. If they choose one category/series only the cars for that category will be displayed.
+        2. Data packs page on the left menu users can select the category/series and the cars for the selected category will displayed on the right side.
 - #### Frequent User Goals
-
+    - Receive a notification when my active data pack is expired.
+        1. Every user will receive a notification when their active data pack expired. After that, they can buy another data pack if they wish.
+    - If I have any questions I would be able to find the right answer or able to contact the site owner.
+        1. Users can check the __*FAQ*__ page may they are able to find an answer for their questions.
+        2. They can use the __*Contact Us*__ page if they don't find the answer for their question on the __*FAQ*__ page. 
+    - I want to get the best deals if it's possible when I'm purchasing data pack(s).
+        1. When a user want to add 2 single setup data packs (Silver Package) to the cart, they will be notified that for the same amount of money (2x £4.99) they should upgrade to Gold Package (£9.99) and they will be able to access all the setup data packs not just two. 
+        2. For *Team discount* they need to contact the site owner via email or the contact us section. 
+    - Want to be able to download my purchased data before the specific week starts in iRacing to have enough time to practice.
+        1. Users will be able to download their setups, files a week before the specific week starts in iRacing that's our goal.
+- #### Site Owner Goals
+    - Want to view and adjust customer orders.
+        1. At the moment all the order management can do in the Django admin page.
+    - Easily update the setup data packs.
+        1. Admins have product and data pack management section in their profile menu. From there they can add new product and data pack. To modify or delete an item on the page they need to navigate to the specific product or data pack detailed page where they have two "admin" button to __*Edit/Update*__ or __*Delete*__.
+    ---
 ### Manual Testing
 - #### Navbar, Footer and all other links 
     - Tested all the links in the navigation bar and in the footer manually.
-    - All the social media links are using the `target="_blank"` attribute and they opening in a new tab of the browser.
+    - All the social media and partner links are using the `target="_blank"` attribute and they opening in a new tab of the browser.
     - No broken links found during the testing. All the links are pointing on the correct section of the site. 
 
-
-# Credits
-## Media / pictures
+## Credits
+---
+### Media / pictures
 - The landing page background images, the series logos and car logos are from [iRacing.com](https://www.iracing.com/)
 - The placeholder image was created with GiMP
 
-## Tutorials used, to get inspired
+### Tutorials used, to get inspired
 - [learndjango.com](https://learndjango.com/tutorials/django-email-contact-form)
 - [Katie Cunningham's Introduction to Django](https://www.youtube.com/watch?v=K74_bKyNDd4)

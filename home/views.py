@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from products.models import Product, Category
 
+
 def index(request):
     """ A view to return the index page """
 
@@ -22,3 +23,13 @@ def packages(request):
         'gold_package': gold_package,
     }
     return render(request, 'home/packages.html', context)
+
+
+""" 404 Error Custom Page """
+def error_404_view(request, exception):
+    return render(request, '404.html')
+
+
+""" 500 Error Custom Page """
+def error_500_view(request):
+    return render(request, '500.html')

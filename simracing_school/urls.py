@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import Facebook, Twitter, Instagram, iRacing, CrewChief, TradingPaints
+from .views import Facebook, Twitter, Instagram, iRacing, CrewChief, TPaints
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +34,11 @@ urlpatterns = [
     path('instagram/', Instagram.as_view(), name='instagram'),
     path('crewchief/', CrewChief.as_view(), name='crewchief'),
     path('iracing/', iRacing.as_view(), name='iracing'),
-    path('tradepaints/', TradingPaints.as_view(), name='tradingpaints'),
+    path('tradepaints/', TPaints.as_view(), name='tradingpaints'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+"""
+From the django documentations
+"""
+handler404 = 'home.views.error_404_view'
+handler500 = 'home.views.error_500_view'

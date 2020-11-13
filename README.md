@@ -204,9 +204,233 @@ The site was tested with multiple browsers(Opera, Firefox, Chrome, MS Edge) and 
     ---
 ### Manual Testing
 - #### Navbar, Footer and all other links 
+    - The navbar is fixed on the top of the page and always visible for the easy navigation through the site all the time
+    - On medium or small screens it's collapsed to a "hamburger" menu on the left side, with a simple click the navbar is visible. 
     - Tested all the links in the navigation bar and in the footer manually.
     - All the social media and partner links are using the `target="_blank"` attribute and they opening in a new tab of the browser.
     - No broken links found during the testing. All the links are pointing on the correct section of the site. 
+    - #### Navbar Top section
+        - __*Brand Logo*__
+            - Brand Logo link tested and working fine, loading the landing page when it's clicked.
+            - Brand Logo is displayed only in large screens. Tested it an it's not visible on a small or medium size sreens.
+        - __*Search Bar*__
+            - The search bar is only visible on large screen. 
+            - On medium and small screens only the search icon is visible and when the user is clicking/tapping the icon the search bar will displayed under it.
+            - Tried to click on the search icon while the bar was empty an error message was displayed that was not entered any search criteria as expected.
+            - Typed random text to the searchbar and the result was displayed: 0 hit for "random text" as it's should be.
+            - Typed a word which I know there will be hits in the database the results come back: __11 Car(s) found for "imsa"__ and the 11 cars were displayed properly. 
+        - __*My Account menu*__
+            - This menu is always visible on every screen sizes. 
+            - When clicked on the menu a dropdown menu was displayed with the following links:
+                - __Not logged in user__
+                    1. Register  "takes the user to the registration page if they are not registered"
+                    2. Login    "If the user is registered they are able to login through the login page"
+                - __Logged in user__
+                    1. My Profile "Takes the user to their profile page"
+                    2. Logout "Takes the user to the logout page"
+                - __Logged in admin__
+                    1. Product Management "Admin only menu - Add new product to the shop"
+                    2. Datapack Management "Admin only menu - Add new datapack to the database"
+                    1. My Profile "Takes the user to their profile page"
+                    2. Logout "Takes the user to the logout page"
+        - __*Shopping Cart*__
+            - Just like the My Account menu this one is always visible too on every screen sizes.
+            - Always shows the current items total value which are in the cart.
+            - When clicking on the cart icon it's opens the shopping cart page where is a detailed view about the items in the cart and links to continue shopping which takes back to the products page or secure checkout which takes to the checkout page. 
+    - #### Navbar lower section
+        - __*Home*__
+            - From everywhere on the page takes back to the landing page as expected.
+            - Hovering over the link a white rounded "roof" effect is visible highlighting the menu options.
+        - __*Packages*__
+            - Opens up the Packages page as expected. 
+            - Hovering over the link a white rounded "roof" effect is visible highlighting the menu options.
+        - __*Series/Cars*__
+            - Opens up the "products"/cars list page as expected. 
+            - Hovering over the link a white rounded "roof" effect is visible highlighting the menu options.
+        - __*Data Packs*__
+            - Opens up the data pack selector page as expected. 
+            - Hovering over the link a white rounded "roof" effect is visible highlighting the menu options.
+        - __*F.A.Q.s*__
+            - Opens up the F.A.Q.s page as expected. 
+            - Hovering over the link a white rounded "roof" effect is visible highlighting the menu options.
+        - __*Contact Us*__
+            - Opens up the contact us page as expected. 
+            - Hovering over the link a white rounded "roof" effect is visible highlighting the menu options.
+- #### Landing Page
+    - On the welcome screen 4 background picture are rotated with JavaScript. Working as expected.
+    - All the Package links are working perfectly as they should be. 
+    - All 3 partner links working as expected and opening the pages in a new tab.
+- #### Packages Page
+    - Silver package link working fine and opens up the products/cars list page. 
+    - Gold package link adding the Gold Package product to the cart as expected.
+- #### Series/Cars page
+    - All the products/cars are displayed as expected from the database.
+    - When selecting a specific category/series only the corresponding products/cars are displayed and the category/series name and the number how many products/cars can find in that series are displayed on the top as it's should be. 
+    - The __*Details*__ link will open the detailed product page on every product, working as expected. Tested all of them by clicking them manually.
+- #### Detailed Product/Cars page
+    - Displays the correct information of the product from the database. Working as expected.
+        - Product name
+        - Description
+        - Image
+        - Series name and image
+        - Price
+        - Duration
+    - The __*Add to cart*__ button will add the selected product to the shopping cart, working fine.
+    - Admin options:
+        - These buttons are visible only for the admins. Tested and working correctly not displayed to normal users.
+        - __Edit/Update button__: Admins are able to edit the selected product the button will open the product management page where is a product form with prefilled data to the from with the current database entries. After editing click on update product to update with new data or click cancel to cancel the change.
+        - __Delete__: This link will remove the product from the database. 
+- #### Data Packs selector page
+    - Tested all the links on the left tab with the category names, when clicked them the selected category's cars were displayed on the right tab. 
+    - The __*Datapacks*__ links on each product card working as expected and opens up the detailed datapack page for the selected product.
+    - Every tab and links were pointing to the correct page and product.
+- #### Detailed Data Pack page
+    - Extra nav bar for easy reach the data for a specific week was working as expected and was displayed the correct week's data.
+    - Back to datapacks link as it should be was opened the data pack selector page. Working fine. 
+    - All the videos was loaded as expected and all the file links was working fine. Tested manually by clicking all of them.
+    - The admin buttons just appear only for admins. Tested with a normal user account wasn't visible for a normal user. 
+    - The __*Edit/Update*__ button opens the Datapack management page with a prefilled form from the database with the current data. After editing any of them by clicking on __*Update datapack*__ button the changes was saved to the database. Working fine tested few times with dummy data.
+    - The __*Delete*__ button was working as expected and removed the datapack from the database. 
+- #### F.A.Q.s page
+    - When clicked one of the questions the answer as sliding down and the question was highlighted as expected.
+    - When clicked another question the previously highlighted question was turning back to the normal status and the newly clicked one was highlighted as it's should be.
+    - All the links in the answer fields was tested and working as expected. 
+- #### Contact Us page
+    - Tried to submit an empty form an error message was displayed and the form wasn't submitted.
+    - Tried to enter a non email address to the email field, form validation displayed an error "not valid email address missing @"
+    - Tried to fill only the email and subject fields and sumbit the form, can't sumbit it without the required fields are filled.
+    - All the fields were filled with correct data and the form was submitted successfully. 
+    - The message was sent to the contact email address. 
+    - Every function of the form was tested and worked as expected.
+- #### Footer
+    - All quick links were tested and working and pointing to the correct page of the site.
+    - The social media links were tested and all opening in a new tab working as expected. 
+    - When hovering the social media links for each link will turn to the colour of the social media platform. (Facebook: dark blue, Instagram: radial colors used, Twitter: light blue)
+---
+## Deployment
+This project was developed on VS Code and GitHub Desktop was used for verion control. Currently is hosted on Heroku platform and AWS S3 services was used to store static and media files.
+
+### Local Deployment
+You need the following programmes to be installed on your system to run this project:
+- An IDE (I've used VS Code)
+- Git / GitHub
+- Pyhton3 
+
+You need to have or create an account on the following services:
+- [Stripe](http://stripe.com)
+- [AWS](http://aws.amazon.com) (S3 Bucket)
+- [Gmail](http://mail.google.com)
+
+To install correctly follow these steps:
+1. You need to install [Python3](https://www.python.org/downloads/) on your system. If you need any help check [Python3 doc](https://www.python.org/doc/)
+2. Clone the repository from github with the following code in the terminal: ```git clone https://github.com/milka77/ci-ms4-simdriver-school.git``` 
+3. Setting up required environment variables:
+    - Create `env.py` file in the root directory
+    - Add `env.py` to the `.gitignore` file
+    - Set the environment variables in the `env.py` with the following syntax:
+    ```
+    import os
+    os.environ['SECRET_KEY'] = '<Your Django secet key>'
+    os.environ['DEVELOPMENT'] = 'True'
+    os.environ["EMAIL_HOST"] = '<Your email host>'
+    os.environ["EMAIL_HOST_USER"] = '<Your email username>'
+    os.environ["EMAIL_HOST_PASS"] = '<Your email password>'
+    os.environ["STRIPE_PUBLIC_KEY"] = '<Your Stripe public key>'
+    os.environ["STRIPE_SECRET_KEY"] = '<Your Stripe secret key>'
+    os.environ["STRIPE_WH_SECRET"] = '<Your Stripe WebHooks secret key>'
+    ```
+4. Import `env` as config in your `settings.py`
+    ```
+    if os.path.exists("env.py"):
+        import env
+    ```
+5. Install the requirements for the project, type in the terminal:
+    ```
+    pip3 install -r requirements.txt
+    ```
+6. You need to apply the migrations with the following command in your terminal: 
+    ```
+    python manage.py migrate
+    ```
+7. To load the data into the databases:
+
+    __*Note!: You need load all 5 different files as(cat, products, weeks, tracks, datapacks)*__
+    ```
+    python manage.py loaddata <json file names>
+    ```
+8. Need to create a superuser for django enter in your terminal and insert your(name, email, password)
+    ```
+    python manage.py createsuperuser
+    ```
+9. To run the server 
+    ```
+    python manage.py runserver
+    ```
+
+### Heroku Deployment
+1. You need to install [Python3](https://www.python.org/downloads/) on your system. If you need any help check [Python3 doc](https://www.python.org/doc/)
+2. Clone the repository from github with the following code in the terminal: 
+    ```
+    git clone https://github.com/milka77/ci-ms4-simdriver-school.git
+    ```
+3. On Heroku website you need to create a new app, add a name,choose your region and create the app.
+4. Click on the Resources tab and type `postgres` to find __Heroku PostGres__ select __Hobby Dev - Free__ package and add it to your Heroku project.
+5. Setting up the environment variables in the __settings__ tab click on __Reveal Config Vars button:
+    |       KEY             | VALUE                       |
+    |-----------------------|-----------------------------|
+    | AWS_ACCESS_KEY_ID     | `YOUR AWS ACCESS KEY ID`    |
+    | AWS_SECRET_ACCESS_KEY | `YOUR AWS_SECRET_ACCESS_KEY`|
+    | DATABASE_URL          | `YOUR POSTGRES BD URL`      |
+    | EMAIL_HOST_PASS       | `YOUR EMAIL PASSWORD`       |
+    | EMAIL_HOST_USER       | `YOUR EMAIL USERNAME`       |
+    | SECRET_KEY            | `YOUR DJANGO SECRET_KEY`    |
+    | USE_AWS               | `TRUE`                      |
+    | STRIPE_SECRET_KEY     | `YOUR STRIPE SECRET_KEY`    |
+    | STRIPE_PUBLIC_KEY     | `YOUR STRIPE_PUBLIC_KEY`    |
+    | STRIPE_WH_SECRET      | `YOUR STRIPE_WH_SECRET`     |
+
+6. Get the Database url from the config vars and enter it in `settings.py` just comment out the default database settings for now.
+    ```
+    DATABASES = {     
+        'default': dj_database_url.parse("your Postrgres database URL")     
+        }
+    ```
+7. You need to apply the migrations with the following command in your terminal: 
+    ```
+    python manage.py migrate
+    ```
+8. To load the data into the databases:
+
+    __*Note!: You need load all 5 different files as(cat, products, weeks, tracks, datapacks)*__
+    ```
+    python manage.py loaddata <json file names>
+    ```
+9. Need to create a superuser for django enter in your terminal and insert your(name, email, password)
+    ```
+    python manage.py createsuperuser
+    ```
+10. Remove the Postgres database settings from `settings.py` and uncomment the original database settings.
+In development you are using the SQLight3 database and in production (on Heroku) using the PostGres with the DATABASE_URL environment variable from Heroku.
+11. Add your Heroku app url to the ALLOWED_HOSTS in `settings.py`.
+12. In the terminal enter to save all changes: 
+    ```
+    git add .
+    git commit -m "heroku deployment"
+    git push
+    ```
+    To deploy to Heroku
+    ```
+    heroku login
+    git push heroku master
+    ```
+    note: if you have more app on Heroku you need to select your app with: 
+    ```
+    git push heroku master --app <yourAPPname>
+    ```
+13. After a successful deployment, on the Heroku website click __Open App__ button.
+14. First you need to verify the superuser's email in the /admin menu.
+15. Hosting static and media files on AWS. You need to create an AWS S3 Bucket [help how to](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html). You need to set the bucket access to public access. [Tutorial how to set up and AWS S3 bucket](https://www.youtube.com/watch?v=L3dYocCSU-E).
+16. If you want to send real emails you need to setting up your email address in EMAIL_HOST_USER variable, your app password generated by your email provider in EMAIL_HOST_PASS variable, and your smtp server address in EMAIL_HOST in `settings.py`. By default all settings are setted for GMAIL services.
 
 ## Credits
 ---

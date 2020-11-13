@@ -14,7 +14,9 @@ class DatapackForm(forms.ModelForm):
         week_friendly_names = [(w.id, w.get_friendly_name()) for w in weeks]
 
         race_tracks = RaceTrack.objects.all()
-        tracks_friendly_names = [(r.id, r.get_friendly_name()) for r in race_tracks]
+        tracks_friendly_names = [
+            (r.id, r.get_friendly_name()) for r in race_tracks
+            ]
 
         self.fields['week'].choices = week_friendly_names
         self.fields['track_name'].choices = tracks_friendly_names

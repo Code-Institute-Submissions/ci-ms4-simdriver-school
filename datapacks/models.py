@@ -27,15 +27,23 @@ class RaceTrack(models.Model):
 
 
 class Datapack(models.Model):
-    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL)
-    week = models.ForeignKey(Week, null=True, blank=True, on_delete=models.SET_NULL)
-    track_name = models.ForeignKey(RaceTrack, null=True, blank=True, on_delete=models.SET_NULL)
+    product = models.ForeignKey(Product, null=True, blank=True,
+                                on_delete=models.SET_NULL)
+    week = models.ForeignKey(Week, null=True, blank=True,
+                             on_delete=models.SET_NULL)
+    track_name = models.ForeignKey(RaceTrack, null=True, blank=True,
+                                   on_delete=models.SET_NULL)
     video_url = models.URLField(max_length=1024, null=True, blank=True)
-    race_setup = models.FileField(null=True, blank=True, upload_to="datapacks/setups/")
-    qual_setup = models.FileField(null=True, blank=True, upload_to="datapacks/setups/")
-    telemetry = models.FileField(null=True, blank=True, upload_to="datapacks/telemetry/")
-    blap = models.FileField(null=True, blank=True, upload_to="datapacks/lapfiles/")
-    olap = models.FileField(null=True, blank=True, upload_to="datapacks/lapfiles/")
+    race_setup = models.FileField(null=True, blank=True,
+                                  upload_to="datapacks/setups/")
+    qual_setup = models.FileField(null=True, blank=True,
+                                  upload_to="datapacks/setups/")
+    telemetry = models.FileField(null=True, blank=True,
+                                 upload_to="datapacks/telemetry/")
+    blap = models.FileField(null=True, blank=True,
+                            upload_to="datapacks/lapfiles/")
+    olap = models.FileField(null=True, blank=True,
+                            upload_to="datapacks/lapfiles/")
 
     def __str__(self):
-        return '%s %s' %(self.product.name, self.week)
+        return '%s %s' % (self.product.name, self.week)

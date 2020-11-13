@@ -26,7 +26,8 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria! We show you everything.")
+                messages.error(request, "You didn't enter any search criteria!\
+                     We show you everything.")
                 return redirect(reverse('products'))
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
@@ -71,7 +72,8 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_details', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. Please ensure \
+                the form is valid.')
     else:
         form = ProductForm()
     
@@ -98,7 +100,8 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, f'The product {product.name} updated succesfully.')
+            messages.success(request, f'The product {product.name} \
+                updated succesfully.')
             return redirect(reverse('product_details', args=[product.id]))
         else:
             messages.error(request, 'Failed to update product.\

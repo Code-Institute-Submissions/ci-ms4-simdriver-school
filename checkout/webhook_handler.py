@@ -93,7 +93,7 @@ class StripeWH_Handler:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
                     email=billing_details.email,
-                    phone_number=shipping_details.phone_number,
+                    phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
                     postcode=shipping_details.address.postal_code,
                     city=shipping_details.address.city,

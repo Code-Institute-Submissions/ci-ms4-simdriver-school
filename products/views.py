@@ -9,7 +9,7 @@ from .forms import ProductForm
 
 
 def all_products(request):
-    """ 
+    """
     A view to return all products, incuding sorting and search queries
     """
 
@@ -29,8 +29,9 @@ def all_products(request):
                 messages.error(request, "You didn't enter any search criteria!\
                      We show you everything.")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(name__icontains=query) |\
+                Q(description__icontains=query)
             products = products.filter(queries)
 
     context = {
@@ -43,7 +44,7 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ 
+    """
     A view to show detailed view of the product
     """
 
@@ -58,7 +59,7 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """ 
+    """
     Add product to the store
     """
     if not request.user.is_superuser:
@@ -76,7 +77,7 @@ def add_product(request):
                 the form is valid.')
     else:
         form = ProductForm()
-    
+
     template = 'products/add_product.html'
     context = {
         'form': form,

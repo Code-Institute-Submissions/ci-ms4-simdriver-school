@@ -1,5 +1,5 @@
 from django.shortcuts import (render, redirect, reverse,
-    get_object_or_404, HttpResponse)
+                              get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -37,7 +37,7 @@ def cache_checkout_data(request):
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    
+
     if request.method == 'POST':
         cart = request.session.get('cart', {})
 
@@ -61,30 +61,33 @@ def checkout(request):
             for item_id, quantity in cart.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    #if isinstance(quantity, int):
+                    # if isinstance(quantity, int):
                     order_line_item = OrderLineItem(
                         order=order,
                         product=product,
                         quantity=quantity,
                     )
                     order_line_item.save()
-                except Product.DoesNotExist: 
+                except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of your products in your cart wasn't found in our database. "
+                        "One of your products in your cart wasn't \
+                        found in our database. "
                         "Please call us for assisctance!")
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
-            
+
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There's nothing in your cart at the moment")
+            messages.error(request, "There's nothing in your \
+                cart at the moment")
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
@@ -152,7 +155,7 @@ def checkout_success(request, order_number):
             profile.active_pack_date = paid_until
             profile.active_pack = None
             profile.save()
-        
+
         # Adding datapack info to the user profile
         else:
             profile.active_pack_date = paid_until
@@ -177,7 +180,7 @@ def checkout_success(request, order_number):
     messages.success(request, f'Order succesfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
-    
+
     if 'cart' in request.session:
         del request.session['cart']
 

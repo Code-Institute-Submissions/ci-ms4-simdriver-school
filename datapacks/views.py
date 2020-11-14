@@ -18,9 +18,9 @@ def setup_details(request, product_id):
 
     datapacks = Datapack.objects.filter(product_id__id=product_id)
     profile = UserProfile.objects.get(user=request.user)
-    
+
     # Validate the user's active datapack
-    current_date = datetime.datetime.now().date()   
+    current_date = datetime.datetime.now().date()
     paid_until = profile.active_pack_date
 
     if paid_until:
@@ -29,7 +29,7 @@ def setup_details(request, product_id):
             profile.active_pack = None
             profile.save()
             messages.info(request, 'Your active datapack has expired!')
-    
+
     context = {
         'datapacks': datapacks,
         'profile': profile,
@@ -61,7 +61,7 @@ def dataselector(request):
         'gt3_sprint': gt3_sprint,
         'open_wheeler': open_wheeler,
         'porsche_gt3_cup': porsche_gt3_cup,
-        'mazda_mx5': mazda_mx5, 
+        'mazda_mx5': mazda_mx5,
 
     }
     return render(request, 'datapacks/dataselector.html', context)
@@ -69,7 +69,7 @@ def dataselector(request):
 
 @login_required
 def add_datapack(request):
-    """ 
+    """
     Add new datapack to the database
     """
     if not request.user.is_superuser:
@@ -83,10 +83,11 @@ def add_datapack(request):
             messages.success(request, 'Successfully added datapack!')
             return redirect(reverse('dataselector'))
         else:
-            messages.error(request, 'Failed to add datapack. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add datapack. Please ensure \
+                the form is valid.')
     else:
         form = DatapackForm()
-    
+
     template = 'datapacks/add_datapack.html'
     context = {
         'form': form,
@@ -110,7 +111,8 @@ def edit_datapack(request, datapack_id):
         form = DatapackForm(request.POST, request.FILES, instance=datapack)
         if form.is_valid():
             form.save()
-            messages.success(request, f'The product {datapack.product.name} updated succesfully.')
+            messages.success(request, f'The product {datapack.product.name} \
+                updated succesfully.')
             return redirect('dataselector')
         else:
             messages.error(request, 'Failed to update datapack.\

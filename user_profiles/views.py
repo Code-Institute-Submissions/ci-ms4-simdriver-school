@@ -22,14 +22,15 @@ def user_profile(request):
             form.save()
             messages.success(request, 'Profile updated succesfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(request, 'Update failed. Please ensure the \
+                form is valid.')
     else:
         form = UserProfileForm(instance=profile)
 
     orders = profile.orders.all()
 
     # Validate the user's active datapack
-    current_date = datetime.datetime.now().date()   
+    current_date = datetime.datetime.now().date()
     paid_until = profile.active_pack_date
 
     if paid_until:

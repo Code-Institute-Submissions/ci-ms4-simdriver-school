@@ -6,9 +6,9 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         exclude = ('user', 'active_pack', 'active_pack_date')
-        
+
     def __init__(self, *args, **kwargs):
-        """ 
+        """
         Add placeholders and classes, remove auto-generated
         labels and set autofocus on first field
         """
@@ -26,7 +26,7 @@ class UserProfileForm(forms.ModelForm):
             if field != 'default_country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
-                else: 
+                else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'profile-form-input'

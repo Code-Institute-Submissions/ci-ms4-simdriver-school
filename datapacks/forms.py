@@ -4,7 +4,7 @@ from .models import Week, Datapack, RaceTrack
 
 class DatapackForm(forms.ModelForm):
 
-    class Meta: 
+    class Meta:
         model = Datapack
         fields = '__all__'
 

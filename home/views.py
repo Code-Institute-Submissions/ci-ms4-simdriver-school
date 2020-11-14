@@ -25,11 +25,15 @@ def packages(request):
     return render(request, 'home/packages.html', context)
 
 
-""" 404 Error Custom Page """
 def error_404_view(request, exception):
+    """
+    404 Error Custom Page
+    """
     return render(request, '404.html')
 
 
-""" 500 Error Custom Page """
 def error_500_view(request):
+    """
+    500 Error Custom Page
+    """
     return render(request, '500.html')

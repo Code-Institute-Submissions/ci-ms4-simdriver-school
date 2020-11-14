@@ -7,9 +7,9 @@ class OrderForm(forms.ModelForm):
         model = Order
         fields = ('full_name', 'email', 'phone_number', 'street_address',
                   'city', 'postcode', 'country', 'county',)
-        
+
     def __init__(self, *args, **kwargs):
-        """ 
+        """
         Add placeholders and classes, remove auto-generated
         labels and set autofocus on first field
         """
@@ -29,7 +29,7 @@ class OrderForm(forms.ModelForm):
             if field != 'country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
-                else: 
+                else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'

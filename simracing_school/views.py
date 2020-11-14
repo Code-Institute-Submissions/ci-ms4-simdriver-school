@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.views.generic.base import RedirectView
 
 """ Social Media links """
+
+
 class Facebook(RedirectView):
     url = 'https://facebook.com'
 
@@ -16,6 +18,8 @@ class Twitter(RedirectView):
 
 
 """ External Site Links """
+
+
 class iRacing(RedirectView):
     url = 'https://iracing.com'
 

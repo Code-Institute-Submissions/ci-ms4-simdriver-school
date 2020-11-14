@@ -442,3 +442,4 @@ In development you are using the SQLight3 database and in production (on Heroku)
 ### Tutorials used, to get inspired
 - [learndjango.com](https://learndjango.com/tutorials/django-email-contact-form)
 - [Katie Cunningham's Introduction to Django](https://www.youtube.com/watch?v=K74_bKyNDd4)
+- [stackowerflow](https://stackoverflow.com/) 

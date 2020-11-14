@@ -45,12 +45,13 @@ Link to the live site on Heroku: [here](https://ci-ms4-simracing-school.herokuap
         - The default font was not changed except the landing page hero logo Russo One was used for that. 
 
 - ### Wireframes
-    - Landing page [view]
-    - Packages page [view]
-    - Series/Cars page [view]
-    - Datapacks page [view]
-    - F.A.Q. page [view]
-    - Contact Us page [view]
+    - Landing page [view](https://github.com/milka77/ci-ms4-simdriver-school/blob/master/media/wireframes/landing.png)
+    - Packages page [view](https://github.com/milka77/ci-ms4-simdriver-school/blob/master/media/wireframes/packages.png)
+    - Series/Cars page [view](https://github.com/milka77/ci-ms4-simdriver-school/blob/master/media/wireframes/products.png)
+    - Dataselect page [view](https://github.com/milka77/ci-ms4-simdriver-school/blob/master/media/wireframes/dataselect.png)
+    - Datapacks page [view](https://github.com/milka77/ci-ms4-simdriver-school/blob/master/media/wireframes/datapack.png)
+    - F.A.Q.s page [view](https://github.com/milka77/ci-ms4-simdriver-school/blob/master/media/wireframes/faqs.png)
+    - Contact Us page [view](https://github.com/milka77/ci-ms4-simdriver-school/blob/master/media/wireframes/contact_us.png)
 ---
 ## Features
 - Responsive design on all device screen sizes
